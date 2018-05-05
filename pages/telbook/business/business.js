@@ -5,21 +5,39 @@ Page({
    * 页面的初始数据
    */
   data: {
-    name:'乡宁二中桥饸饹',//商家店名
-    introduce:'致力为消费者提供高品质食品',//商家介绍
+    name:'宠宠福利社',//商家店名
+    introduce: '本店内所有龙猫用品均为本人自己制作，手工厕所、跳板 木窝（材质为杉木）、冰窝、栈道（材质为杨木）等用品。常规板子厚度均在1.7cm左右。各种尺寸可随意定做。',//商家介绍
     gonggao:[
-       {lx:'招聘', gg:'我是公告我是公告我是公告我是公告我是公告我是公告我是公告我是公告我是公告我是公告'},
-       {lx:'活动', gg: '我是公告我是公告我是公告我是公告我是公告我是公告我是公告我是公告我是公告我是公告'},
+       {lx:'招聘', gg:'急招一名服务员'},
+       {lx:'活动', gg: '购买就送精美包装，方便送礼'},
+       { lx: '活动', gg: '七夕节本店推出"浪漫情人节，唯爱一生不变"的活动将优惠进行到底，让浪漫与你同在' },
     ],//商家公告
     phonecall: '13934691550',//商家电话
     time:'08:00-20:00',//营业时间
-    dizhi:'乡宁二中桥',//商家地址
-    dis:'block',//背景消失出现
-    animation: ''
+    dizhi:'武汉光谷西班牙风情街C2101（肯德基楼上）',//商家地址
+    animation: '',
+    animation1: '',
+    jiajian:'block',
+    image: '',
+    flexNavState: true,
+    zhezhaoState:false,
+    wxid:'123123',
+    block:'none',
+    bgurl:'http://i4.bvimg.com/644269/b1373666854749d3.jpg'
   },
   /**
    * 页面跳转
    */
+  flexNavAnimate: function() {
+    let height = this.data.flexNavState ? "330rpx": '0rpx';
+    let state = !this.data.flexNavState
+    this.animation1.height(height).step()
+    this.setData({
+      //输出动画
+      animation1: this.animation1.export(),
+      flexNavState:state
+    })
+  },
   settled: function () {
     wx.navigateTo({
       url: '../settled/settled'
@@ -80,6 +98,26 @@ Page({
       success: function (res) {
         console.log(res)
       }
+    }),
+    this.animation1 = wx.createAnimation({
+        duration: 500,
+        timingFunction: 'ease',
+        delay: 100,
+        transformOrigin: 'left top 0',
+        success: function (res) {
+          console.log(res)
+        }
+      });
+    let that= this;
+    wx.getImageInfo({
+      src: that.data.bgurl,
+      success: function (res) {
+        if (res.width == 200 && res.height == 200) {
+          that.setData({
+            bgurl: 'http://i4.bvimg.com/644269/b1373666854749d3.jpg'
+          })
+        }
+      }
     })
   },
 
@@ -125,7 +163,7 @@ Page({
     return {
       title: this.data.name,  // 转发标题（默认：当前小程序名称）
       path: '/pages/business/business?id=', // 转发路径（当前页面 path ），必须是以 / 开头的完整路径
-      imageUrl: "http://img.itc.cn/saapic/a/20472198.gif",
+      imageUrl: this.data.image,
       success(e) {
         // shareAppMessage: ok,
         // shareTickets 数组，每一项是一个 shareTicket ，对应一个转发对象
@@ -145,16 +183,76 @@ Page({
    */
   chuxian: function () {
     this.animation.opacity(0.98).height('100%').step()
+    if (this.data.flexNavState) {
+      this.flexNavAnimate()
+    }
     this.setData({
       //输出动画
-      animation: this.animation.export()
+      animation: this.animation.export(),
+      zhezhaoState:true
     })
   },
   yc: function () {
     this.animation.opacity(0).height('0%').step()
+    if (!this.data.flexNavState) {
+      this.flexNavAnimate()
+    }
     this.setData({
       //输出动画
-      animation: this.animation.export()
+      animation: this.animation.export(),
+      zhezhaoState: false
+    }) 
+  },
+  /**
+ * 分享自定义图片
+ */
+  imgupdate: function () {
+    var that = this;
+    wx.chooseImage({
+      // 设置最多可以选择的图片张数，默认9,如果我们设置了多张,那么接收时//就不在是单个变量了,
+      count: 1,
+      sizeType: ['original', 'compressed'], // original 原图，compressed 压缩图，默认二者都有
+      sourceType: ['album', 'camera'], // album 从相册选图，camera 使用相机，默认二者都有
+      success: function (res) {
+        // 获取成功,将获取到的地址赋值给临时变量
+        var tempFilePaths = res.tempFilePaths;
+        console.log(tempFilePaths)
+        that.setData({
+          //将临时变量赋值给已经在data中定义好的变量
+          image: tempFilePaths[0]
+        })
+      },
     })
   },
+  /**
+   * 剪切板
+   */
+  jianqie:function(){
+    wx.setClipboardData({
+      data: this.data.wxid,
+      success: function (res) {
+        wx.getClipboardData({
+          success: function (res) {
+            console.log(res.data) // data
+          }
+        })
+      }
+    })
+    this.setData({
+      block: 'none'
+    })
+  },
+  /**
+   * 微信号显示影藏
+   */
+  block:function(){
+    this.setData({
+      block:'block'
+    })
+  },
+  none:function(){
+    this.setData({
+      block:'none'
+    })
+  }
 })

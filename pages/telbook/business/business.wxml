@@ -1,13 +1,20 @@
 <!--pages/business/business.wxml-->
 <!-- <view id="business-img"></view> -->
+<!-- <view id="banner"><image src='../../img/456.jpg'></image></view> -->
 <view id="business-name">{{name}}</view>
 <view id="business-introduce">{{introduce}}</view>
 <view id="gonggaoid" bindtap='chuxian'>
-  <view class="gonggao">公 告</view>
+<image class='gonggao-beij' src='{{bgurl}}'></image>
+  <!-- <view class="gonggao">公 告</view> -->
+  <view class="gonggao-big">店铺公告</view>
   <view class="gonggao-content">
-    <view bindtap='chuxian' class="gg-content" wx:for="{{gonggao}}" wx:key="unique"><view class="box-qiu"></view>{{item.gg}}</view>
+    <view  class="gg-content" wx:for="{{gonggao}}" wx:key="unique">
+      <view class="box-qiu"></view>
+      {{item.gg}}
+      <!-- <view class="gg-c">{{item.gg}}</view> -->
+    </view>
   </view>
-  <view bindtap='chuxian' class="dianjixiangqing">more</view>
+  <view class="dianjixiangqing">查看更多</view>
 </view>
 <view id="time">
   <view class="time">营业时间</view>
@@ -17,12 +24,38 @@
   <view class="time">详细地址</view>
   <view class="time-content">{{dizhi}}</view>
 </view>
-<view id="time">
+<!-- <view id="time">
   <view class="time">联系方式</view>
   <view class="time-content time1" bindtap='phonecallevent'>{{phonecall+"　　　"}}<i>></i></view>
+</view> -->
+<view id="join">
+  <button class="join" open-type="share">生成朋友圈分享图</button>
+  <button class="join" >我是商家,我要入驻</button> 
 </view>
-<button class="join" open-type="share">我要分享</button>
-<button id="join" bindtap="settled">我要加入</button>
-<view id="zhezhao" style='display: {{dis}}' animation="{{animation}}" bindtap='yc'>
+<view id="zhezhao" animation="{{animation}}" bindtap='yc'>
+  <view class="dian-gg">{{name}}</view>
   <view class="gg-con" wx:for="{{gonggao}}" wx:key="unique"><view class="boxqiu">{{item.lx}}</view>{{item.gg}}</view>
 </view>
+<view id="dibu">
+  <view class="dibu-left">首页</view>
+  <view class="dibu-left" open-type="share">收藏</view>
+  <view class="dibu-right" bindtap='phonecallevent'>
+    <view>一 键 拨 号</view>
+    <view>{{phonecall}}</view>
+  </view>
+</view>
+<!-- <view class="piaofu" bindtap='height1' >-</view> 
+<view class="piaofu" bindtap='height'  style='display:{{jiajian}}'>+</view> -->
+<view class="piaofu" bindtap='flexNavAnimate' ><span wx:if='{{flexNavState}}'>+</span><span wx:else>-</span></view>
+<view id="piaofu-content" animation="{{animation1}}">
+  <button class="piaofu-content" open-type="share">转发</button> 
+  <view class="piaofu-content" bindtap='block'>微信</view>
+  <view class="piaofu-content">分享</view>
+</view>
+<view id='wxid' style='display:{{block}}' bindtap='none'></view>
+<view class="wxid" style='display:{{block}}'>
+    <view class='wxid-ts'>保存微信号进行添加</view>
+    <view class='wxid-content'>{{wxid}}</view>
+    <button bindtap='jianqie' class='wxid-fz'>一键复制</button>
+</view>
+
