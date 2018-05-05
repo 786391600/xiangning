@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "超市菜价",
+  "navigationBarBackgroundColor": "#E74540",
+  "navigationBarTextStyle": "white",
+  "enablePullDownRefresh": true,
+  "backgroundColor": "#E74540"
+}

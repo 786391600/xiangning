@@ -1,0 +1,23 @@
+input{
+ border-top: 1px solid #ccc;
+ border-bottom: 1px solid #ccc;
+ padding: 20rpx;
+}
+.active{
+  color:#40C013;
+}
+.tab-top{
+  display: flex;
+  background: #FBFBFB;
+  color:#868686;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-bottom: 1rpx solid #ccc;
+}
+.tab-top view{
+  padding:0 20rpx 0;
+  font-size: 18px;
+}
+.tab-box{
+  padding-top: 50rpx;
+}

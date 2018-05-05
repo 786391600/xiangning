@@ -1,0 +1,31 @@
+<!--index.wxml-->
+<scroll-view scroll-y='true' class='scrollView'>
+<view class='search'>
+  <view class='search-box'>
+    <i class='iconfont icon-search'></i> 搜索优惠券
+  </view>
+</view>
+<view class='coupon'>
+  <view wx:for='{{dateArr}}' class='coupon-list free' id='wangtao' >
+     <view class='conpon-list-left'>
+       <view class='conpon-img'>
+         <image src='https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2958464701,355091713&fm=27&gp=0.jpg'>
+         </image>
+       </view>
+       <view class='conpon-content'>
+          <view class='conpon-content-title'>
+            {{item}}--{{index}}
+          </view>
+          <view class='conpon-content-find'>
+          <i class='iconfont icon-see'></i>10
+          <i class='iconfont icon-position'></i>92.1km
+          </view>
+       </view>
+     </view>
+     <view class='conpon-list-right'>
+       <button  type="primary" bindtap='showDateils' data-name='{{item}}'>领取</button>
+     </view> 
+  </view>
+</view>
+</scroll-view>
+

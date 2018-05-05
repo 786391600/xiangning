@@ -1,0 +1,63 @@
+@import '../../utils/iconfont.wxss';
+.continer{
+  width: 100%;
+  text-align: center
+}
+.user-image{
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+.nickName{
+  width:100%;
+  display: block;
+}
+.user-list{
+  font-size: 40rpx;
+  /* padding: 0px 40rpx 0px; */
+}
+.user-list i{
+  margin:0px  40rpx 0px;
+  font-size: 60rpx;
+  margin-bottom: 20rpx;
+}
+.user-list{
+  display: flex;
+  box-sizing: border-box;
+  flex-direction:row;
+   flex-wrap:wrap;
+   margin-top: 80rpx;
+   background: #ccc;
+}
+.user-list>.list-hover{
+  background: #ccc;
+}
+.user-list>view{
+  display: flex;
+  width: 50%;
+  box-sizing: border-box;
+  flex-direction:column;
+   flex-wrap:nowrap;
+  text-align: center;
+  padding: 45rpx 0px 45rpx;
+  background: white;
+  margin: 1rpx 0px 1rpx;
+  /* border-top:0.5rpx solid #ccc;
+  border-bottom:0.5rpx solid #ccc; */
+}
+.user-list view:nth-of-type(n){
+  border-right: 1rpx solid #ccc;
+}
+.user-list view:nth-of-type(3){
+  margin-top: 0;
+}
+.user-list view:nth-of-type(4){
+  margin-top: 0;
+}
+.discount{
+  color:#FF5511;
+}
+.help{
+  color:#0C61AD;
+}

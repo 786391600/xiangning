@@ -1,0 +1,41 @@
+    <loading wx:if='{{loadingHidden}}'>加载中</loading>
+<view class='title'>
+   乡宁菜价
+</view>
+<view class='time'>菜价时间：{{priceTime}}</view>
+<view class="section">
+  <picker bindchange="bindPickerChange" range="{{priceClassArr}}" range-key='name'>
+    <view class="picker">
+    <view class='picker-box'>点击选择</view><view class='picker-box'>{{priceClassArr[classIndex].name}}</view>
+    </view>
+  </picker>
+</view>
+<view class='table'>
+   <!-- <view class='table-head'>
+     <view class='row'>名称</view>
+     <view class='row'>价格</view>
+     <view class='row'>单位</view>
+  </view>
+  <view class='table-con'>
+   <view class='col' wx:for='{{priceArr}}'>
+     <view class='row'>{{item.name}}</view>
+     <view class='row'>{{item.price}}</view>
+     <view class='row'>{{item.com}}</view>
+   </view> 
+  </view> -->
+  <view class='table'>
+   <view class='table-box' wx:for='{{priceArr}}'>
+     <view class='table-box-row'>{{item.name}}</view>
+     <view class='table-box-row price'>¥{{item.price}}</view>
+     <view class='table-box-row'>{{item.com}}</view>
+     <view class='table-box-row-title'>{{priceTime}}</view>
+   </view> 
+  </view>
+</view>
+<view class='Forward'>
+  <button open-type='share'>转发</button>
+  <button bindtap='getQR'>获取二维码</button>
+  <button bindtap='uploadImg'>上传图片</button>
+  <canvas canvas-id='myCanvas' class='{{canvasClass}}'></canvas>
+  <image src='{{imgUrl}}'></image>
+</view>

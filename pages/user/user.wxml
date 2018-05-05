@@ -1,0 +1,20 @@
+<view class='continer'>
+    <image src='{{userInfo.avatarUrl}}' class='user-image'></image>
+    <text class='nickName'>{{userInfo.nickName}}</text>
+</view>
+<view>
+  <view class='user-list'>
+    <!-- <view hover-class='list-hover'><i class='iconfont discount'></i>我的优惠券</view>
+    <view hover-class='list-hover'><i class='iconfont help'></i>优惠券使用说明</view>
+    <view hover-class='list-hover'><i class='iconfont aboutAs'></i>关于我们</view>
+     <view hover-class='list-hover'>
+     <button open-type="contact"><i class='iconfont aboutAs'></i>进入客服会话</button>
+     </view> -->
+     <view hover-class='list-hover' bindtap='adminClick' data-value='price'>
+        菜价管理
+     </view>
+     <view hover-class='list-hover' bindtap='adminClick' data-value='telbook'>
+        电话本管理
+     </view>       
+ </view>
+ </view>

@@ -1,0 +1,79 @@
+@import '../../../utils/iconfont.wxss';
+.title{
+  color:#C0C4C7;
+}
+.storeCon{
+  padding: 0 15px 0;
+  box-sizing: border-box;
+  margin-bottom:20px;
+}
+.telList{
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  height: 99px;
+}
+.store-left{
+  width: 15%;
+  height: 100%;
+  line-height: 99px;
+  text-align: center;
+}
+.store-right{
+  height: 100%;
+  width:80%;
+}
+.store-phone{
+  width:15%;
+  height: 100%;
+  text-align: center;
+  line-height: 99px;
+}
+.icon-phone{
+  font-size: 40px;
+  color:coral;
+}
+.store-right>view{
+  height: 33px;
+  line-height: 33px;
+}
+.store-right-title{
+  font-size: 18px;
+  font-weight: bold;
+}
+.store-right-con{
+  color:#ccc;
+}
+.addBtn{
+  position: fixed;
+  bottom:0px;
+  height: 50px;
+  width: 100%;
+  background: #EBEFF2;
+  border-top:1px solid #ccc;
+}
+.addBtn>button{
+  position: absolute;
+  width: 50%;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  height: 35px;
+  line-height: 35px;
+  margin: auto;
+}
+.loding{
+  background: #EBEFF2;
+  text-align: center;
+  color:#C0C4C7;
+  font-size:14px;
+  height: 30px;
+  line-height: 30px;
+}
+.conInfo{
+  background: #EBEFF2;
+  padding-bottom: 60px;
+  text-align: center;
+  color:#C0C4C7;
+  font-size:14px;
+}

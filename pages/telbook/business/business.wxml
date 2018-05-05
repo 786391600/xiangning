@@ -1,0 +1,28 @@
+<!--pages/business/business.wxml-->
+<!-- <view id="business-img"></view> -->
+<view id="business-name">{{name}}</view>
+<view id="business-introduce">{{introduce}}</view>
+<view id="gonggaoid" bindtap='chuxian'>
+  <view class="gonggao">公 告</view>
+  <view class="gonggao-content">
+    <view bindtap='chuxian' class="gg-content" wx:for="{{gonggao}}" wx:key="unique"><view class="box-qiu"></view>{{item.gg}}</view>
+  </view>
+  <view bindtap='chuxian' class="dianjixiangqing">more</view>
+</view>
+<view id="time">
+  <view class="time">营业时间</view>
+  <view class="time-content">{{time}}</view>
+</view>
+<view id="time">
+  <view class="time">详细地址</view>
+  <view class="time-content">{{dizhi}}</view>
+</view>
+<view id="time">
+  <view class="time">联系方式</view>
+  <view class="time-content time1" bindtap='phonecallevent'>{{phonecall+"　　　"}}<i>></i></view>
+</view>
+<button class="join" open-type="share">我要分享</button>
+<button id="join" bindtap="settled">我要加入</button>
+<view id="zhezhao" style='display: {{dis}}' animation="{{animation}}" bindtap='yc'>
+  <view class="gg-con" wx:for="{{gonggao}}" wx:key="unique"><view class="boxqiu">{{item.lx}}</view>{{item.gg}}</view>
+</view>

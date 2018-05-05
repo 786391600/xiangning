@@ -1,0 +1,62 @@
+<view class="tab-top" bindtap="tab"> 
+  <view class="{{tabArr.curHdIndex=='0'? 'active' : ''}}" id="tab-hd01" data-id="0">添加菜价</view> 
+  <view class="{{tabArr.curHdIndex=='1'? 'active' : ''}}" id="tab-hd02" data-id="1">添加超市</view>
+  <view class="{{tabArr.curHdIndex=='2'? 'active' : ''}}" id="tab-hd03" data-id="2">设置</view>
+</view> 
+<view class="tab-box"> 
+  <view wx-if="{{tabArr.curBdIndex=='0'}}">
+    <view >
+     <form bindsubmit="priceSubmit">
+     <view class="section">
+       <view class="section__title">默认超市</view>
+       <picker name='selecter'name='classId' value='{{priceClassArr[priceClassIndex]._id}}' range="{{priceClassArr}}" range-key='name'  bindchange="changePriceClass">
+       <view class="picker">
+         当前超市: {{priceClassArr[priceClassIndex].name}}
+       </view>
+       </picker> 
+       </view>
+     <view class="section">
+     <view class="section__title">菜价时间</view>
+     <picker name='time' mode="date" value="{{date}}" start='{{startTime}}' end='{{endTime}}' bindchange="bindDateChange">
+     <view class="picker">
+      当前选择: {{date}}
+     </view>
+     </picker> 
+     </view>
+     名称：<input name='name' value='{{price.name}}'></input>
+     价格：<input name='price' value='{{price.price}}'></input>
+     单位：<input name='com' value='{{price.com}}'></input>
+     {{price.name}}
+     <button type="primary" size="{{primarySize}}" loading="{{priceLoding}}"  formType="submit"> 提交 </button>
+     </form>
+     </view>   
+  </view> 
+  <view wx-if="{{tabArr.curBdIndex=='1'}}">
+    <form bindsubmit="superSubmit">
+      超市名称：<input name='name' value='{{super.name}}'></input>
+      公告： <textarea name='notice' value='{{super.notice}}'></textarea>
+      <button type="primary" size="{{primarySize}}" loading="{{superLoding}}"  formType="submit"> 提交 </button>
+    </form>
+  </view> 
+  <view wx-if="{{tabArr.curBdIndex=='2'}}">
+    <form bindsubmit="setPriceConfig">
+      <view class="section">
+       <view class="section__title">默认超市</view>
+       <picker name='selecter'name='priceClassId' value='{{priceClassArr[priceClassIndex]._id}}' range="{{priceClassArr}}" range-key='name'  bindchange="changePriceClass">
+       <view class="picker">
+         当前超市: {{priceClassArr[priceClassIndex].name}}
+       </view>
+       </picker> 
+       </view>
+      <view class="section">
+       <view class="section__title">默认菜价时间</view>
+       <picker name='time' mode="date" value="{{date}}" start='{{startTime}}' end='{{endTime}}' bindchange="bindDateChange">
+       <view class="picker">
+         当前选择: {{date}}
+       </view>
+       </picker> 
+       </view>
+      <button type="primary" size="{{primarySize}}" loading="{{superLoding}}"  formType="submit"> 提交 </button>
+    </form>
+  </view>
+</view> 

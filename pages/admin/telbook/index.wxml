@@ -1,0 +1,26 @@
+<!--index.wxml--> 
+<loading wx:if='{{loadingHidden}}'>加载中</loading>
+<view wx:for="{{classData}}" wx:for-item="classDataOne" class='list' wx:if='{{!searchStart}}'>
+   <view bindtap='classToggle' data-index='{{index}}' data-id='{{classDataOne._id}}' data-toggle='{{classDataOne.toggle}}' data-title='{{classDataOne.title}}' class='listTitle'>{{classDataOne.title}}
+      <i class='iconfont icon-down {{!classDataOne.toggle?"transform":""}}'></i>
+   </view>
+   <view wx:for="{{classDataOne.data}}" bindtap='listDataClick' data-id='{{classDataTwo.id}}' data-title='{{classDataTwo.title}}' wx:for-item="classDataTwo" wx:if='{{classDataOne.toggle}}' class='listData' >
+      {{classDataTwo.title}}
+   </view>
+</view>  
+<view  class='list '>
+   <view bindtap='classToggle'  data-id='one'  class='listTitle'>
+      添加一级导航<i class='iconfont icon-down transform'></i>
+   </view>
+</view>
+<form bindsubmit="formSubmit" bindreset="formReset" class='form'>
+  <view class="section">
+    <view class="section__title">分类名称:{{className}}</view>
+    <input name="input" placeholder="添加名称" value='{{inputText}}' focus='{{inputFocus}}' class='input'/>
+  </view>
+   <view class="btn-area">
+    <button formType="submit">提交</button>
+    <button formType="reset">清空</button>
+  </view>
+</form>
+

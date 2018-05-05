@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "商家电话本",
+  "enablePullDownRefresh": true,
+  "backgroundColor": "white",
+  "navigationBarBackgroundColor": "#FED636",
+  "navigationBarTextStyle": "white"
+}

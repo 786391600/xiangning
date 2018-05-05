@@ -1,0 +1,6 @@
+<view class="section">
+  <textarea bindblur="bindTextAreaBlur"  placeholder="自动变高" />
+</view>
+<!-- <canvas style="width: 100%; height: 100px" canvas-id="can" id='can' bindtouchend='showImage'></canvas> -->
+<canvas style='margin:0 auto;width:322px;height:{{canvasHeight}}px;' canvas-id='preCan'>
+</canvas>

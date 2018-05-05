@@ -1,0 +1,111 @@
+/**index.wxss**/
+@import '../../utils/iconfont.wxss';
+.scrollView{
+  display: block;
+  height:2000rpx;
+   background: #F0F0F0;
+}
+.coupon{
+  padding: 30rpx 30rpx;
+   background: #F0F0F0; 
+  padding-top: 0; 
+  overflow: hidden;
+}
+.coupon-list{
+  width: 100%;
+  height: 200rpx;
+  padding: 0 20rpx;
+  padding-right: 0px;
+  position: relative;
+  box-sizing: border-box;
+  margin: 40rpx 0 40rpx;
+}
+.free{
+  /*黄色 #F39B00*/
+  background:radial-gradient(rgba(0, 0, 0, 0) 0,rgba(0, 0, 0, 0) 10rpx, white 10rpx);
+  background-size: 30rpx 30rpx; 
+  background-position: -14rpx -6rpx; 
+}
+.coupon-list>view{
+  float: left;
+}
+.free>view{
+  background: white;
+}
+.coupon-list .conpon-list-left{
+  width:75%;
+  height:100%;
+  box-sizing: border-box;
+  border-right: 2rpx dashed #F0F0F0;
+  padding: 16rpx;
+}
+.coupon-list .conpon-list-right{
+  width:25%;
+  box-sizing: border-box;
+  padding: 0 14rpx;
+  height:100%;
+}
+.conpon-list-right button{
+  width: 100%;
+  height: 60rpx;
+  font-size: 30rpx;
+  line-height: 60rpx;
+  text-align: center;
+  box-sizing: border-box;
+  margin-top:70rpx;
+}
+.conpon-list-left{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.conpon-list-left .conpon-img{
+  width:35%;
+  height: 100%;
+  overflow: hidden;
+}
+.conpon-list-left .conpon-img image{
+  width:100%;
+  height: 100%;
+}
+.conpon-list-left .conpon-content{
+  width:65%;
+  box-sizing: border-box;
+  padding-left: 30rpx;
+}
+.conpon-content .conpon-content-title{
+  display:block;
+  white-space:nowrap; 
+  overflow:hidden; 
+  text-overflow:ellipsis;
+  font-size: 32rpx;
+  height:50%;
+  line-height: 100rpx;
+}
+.conpon-content .conpon-content-find{
+  display:block;
+  white-space:nowrap; 
+  overflow:hidden; 
+  text-overflow:ellipsis;
+  font-size: 24rpx;
+  height:50%;
+  line-height: 70rpx;
+  color:#ccc;
+}
+
+/*搜索*/
+.search{
+  background:  #F0F0F0;
+  padding: 20rpx 40rpx;
+}
+.search-box{
+  width: 100%;
+  height: 60rpx;
+  background: white;
+  border-radius: 30rpx;
+  text-align: center;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  color:#ccc;
+  line-height: 60rpx;
+}

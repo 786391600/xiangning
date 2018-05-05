@@ -1,0 +1,46 @@
+/* pages/telbook/index/index.wxss */
+/**index.wxss**/
+@import '../../../utils/iconfont.wxss';
+page{
+  background: #EFEFF4;
+}
+
+.input{
+  height:50rpx;
+  border-top: 1rpx solid #D3D2D4;
+  border-bottom: 1rpx solid #D3D2D4;
+}
+.list{
+  background: white;
+   margin-top: 15px;
+   padding: 0px 15px 0px; 
+}
+.listTitle{
+  padding: 18px 0px 18px; 
+  color:#6D6D6D;
+} 
+.listTitle i{
+  display: block;
+  float: right;
+  color:#D3D2D4;
+} 
+.listData{
+  border-top:1rpx solid #EFEFF4;
+  /* border-bottom: 1rpx solid #EFEFF4; */
+  padding: 15px 0px 15px;
+}
+.transform{
+ transform:  rotate(-180deg);
+}
+.form{
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  background: white;
+}
+.oneList{
+  margin-bottom: 200rpx
+}
+
+
+

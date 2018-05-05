@@ -1,0 +1,161 @@
+<view class='storeCon'>
+ <view class='title'>
+  当前分类:{{title}}
+ </view>
+ <view class='telList' bindtap='toPhonePage'>
+   <view class='store-left'>
+     <i class='iconfont discount'></i>
+   </view>
+   <view class='store-right'>
+     <view class='store-right-title'>
+      申通快递启明东路
+     </view>
+     <view class='store-right-con'>
+      912人使用过 距离:111m
+     </view>
+     <view class='store-right-con'>
+       13934691550
+     </view>
+   </view>
+   <view class='store-phone' catchtap='phoneClick'>
+    <i class='iconfont icon-phone'></i>
+   </view>
+ </view>
+ <view class='telList' bindtap='toPhonePage'>
+   <view class='store-left'>
+     <i class='iconfont discount'></i>
+   </view>
+   <view class='store-right'>
+     <view class='store-right-title'>
+      申通快递启明东路
+     </view>
+     <view class='store-right-con'>
+      912人使用过 距离:111m
+     </view>
+     <view class='store-right-con'>
+       13934691550
+     </view>
+   </view>
+ </view>  
+ <view class='telList' bindtap='toPhonePage'>
+   <view class='store-left'>
+     <i class='iconfont discount'></i>
+   </view>
+   <view class='store-right'>
+     <view class='store-right-title'>
+      申通快递启明东路
+     </view>
+     <view class='store-right-con'>
+      912人使用过 距离:111m
+     </view>
+     <view class='store-right-con'>
+       13934691550
+     </view>
+   </view>
+ </view>  
+ <view class='telList' bindtap='toPhonePage'>
+   <view class='store-left'>
+     <i class='iconfont discount'></i>
+   </view>
+   <view class='store-right'>
+     <view class='store-right-title'>
+      申通快递启明东路
+     </view>
+     <view class='store-right-con'>
+      912人使用过 距离:111m
+     </view>
+     <view class='store-right-con'>
+       13934691550
+     </view>
+   </view>
+ </view>  
+ <view class='telList' bindtap='toPhonePage'>
+   <view class='store-left'>
+     <i class='iconfont discount'></i>
+   </view>
+   <view class='store-right'>
+     <view class='store-right-title'>
+      申通快递启明东路
+     </view>
+     <view class='store-right-con'>
+      912人使用过 距离:111m
+     </view>
+     <view class='store-right-con'>
+       13934691550
+     </view>
+   </view>
+ </view>  
+ <view class='telList' bindtap='toPhonePage'>
+   <view class='store-left'>
+     <i class='iconfont discount'></i>
+   </view>
+   <view class='store-right'>
+     <view class='store-right-title'>
+      申通快递启明东路
+     </view>
+     <view class='store-right-con'>
+      912人使用过 距离:111m
+     </view>
+     <view class='store-right-con'>
+       13934691550
+     </view>
+   </view>
+ </view>  
+ <view class='telList' bindtap='toPhonePage'>
+   <view class='store-left'>
+     <i class='iconfont discount'></i>
+   </view>
+   <view class='store-right'>
+     <view class='store-right-title'>
+      申通快递启明东路
+     </view>
+     <view class='store-right-con'>
+      912人使用过 距离:111m
+     </view>
+     <view class='store-right-con'>
+       13934691550
+     </view>
+   </view>
+ </view>  
+ <view class='telList' bindtap='toPhonePage'>
+   <view class='store-left'>
+     <i class='iconfont discount'></i>
+   </view>
+   <view class='store-right'>
+     <view class='store-right-title'>
+      申通快递启明东路
+     </view>
+     <view class='store-right-con'>
+      912人使用过 距离:111m
+     </view>
+     <view class='store-right-con'>
+       13934691550
+     </view>
+   </view>
+ </view>  
+ <view class='telList' bindtap='toPhonePage'>
+   <view class='store-left'>
+     <i class='iconfont discount'></i>
+   </view>
+   <view class='store-right'>
+     <view class='store-right-title'>
+      申通快递启明东路
+     </view>
+     <view class='store-right-con'>
+      912人使用过 距离:111m
+     </view>
+     <view class='store-right-con'>
+       13934691550
+     </view>
+   </view>
+ </view>     
+</view>
+<view class='loding'>
+ 加载中...
+</view>
+<view class='conInfo'>
+   技术支持：乡宁向导
+</view>
+<view class='addBtn'>
+  <button type="primary">我要加入</button>
+</view>

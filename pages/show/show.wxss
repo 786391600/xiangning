@@ -1,0 +1,11 @@
+/* pages/show/show.wxss */
+.show_title{
+    width:100px;
+    height: 100px;
+    background:yellow;
+}
+.show-input{
+    border: 1px solid #ccc;
+    float: left;
+}
+

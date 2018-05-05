@@ -1,0 +1,43 @@
+<view class='dateilsBox'>
+  <view class='dateilsTitle'>
+    <view>
+       滑雪优惠券滑雪优惠券
+    </view>
+  </view>
+  <view class='dateilsCon'>
+   <view>
+   <button type='primary'>免费领取</button>
+   <view class='dateilsConBox'>
+     <view class='dateilsConBox-left'>说明:</view>
+     <view class='dateilsConBox-right'>说明说明说明说明说明</view>   
+   </view>
+   <view class='dateilsConBox'>
+     <view class='dateilsConBox-left'>时间:</view>
+     <view class='dateilsConBox-right'>顶顶顶顶顶顶顶顶顶顶顶顶顶顶地对地导弹</view>   
+   </view>
+   <view class='dateilsConBox'>
+     <view class='dateilsConBox-left'>位置:</view>
+     <view class='dateilsConBox-right'>顶顶顶顶顶顶顶顶顶顶顶顶顶顶地对地导弹</view>   
+   </view>
+   <view class='dateilsConBox'>
+     <view class='dateilsConBox-left'>电话:</view>
+     <view class='dateilsConBox-right'>13934691550</view>   
+   </view>
+   </view>
+  </view>
+  <view class='transiation'>
+    <view class='transiation-top'>
+      <view><i class='iconfont icon-comment'></i>精彩评论</view>
+      <view class='readComment'><i class='iconfont icon-readComment'></i>写评论</view>
+    </view>
+    <view class='transiation-con'>
+      <view class='noTransiation'>
+       <i class='iconfont icon-onTransiation'></i>{{noTransiation}}
+      </view>
+    </view>
+  </view>
+</view>
+<view class='fuwenben'>
+<import src="../../wxParse/wxParse.wxml"/>
+<template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+</view>

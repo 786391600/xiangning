@@ -1,0 +1,11 @@
+#can{
+  margin:0 auto;
+  background: white;
+}
+textarea{
+  border:1px solid black;
+  border-radius: 5px;
+  height: 100px;
+  width:100%;
+  box-sizing: border-box;
+}
