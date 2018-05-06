@@ -32,15 +32,16 @@ Page({
     let height = this.data.flexNavState ? "330rpx": '0rpx';
     let state = !this.data.flexNavState
     this.animation1.height(height).step()
+    
     this.setData({
       //输出动画
       animation1: this.animation1.export(),
       flexNavState:state
     })
   },
-  settled: function () {
+  details: function () {
     wx.navigateTo({
-      url: '../settled/settled'
+      url: '../details/details'
     })
   },
 

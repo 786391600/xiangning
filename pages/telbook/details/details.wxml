@@ -1,0 +1,44 @@
+<!--pages/settled/settled.wxml-->
+<!-- <view id="settled-img" bindtap="imgupdate">
+  <view class="img-title">商家图片</view>
+  <view class="img-jiantou">></view>
+  <view class="img-content">
+    <image src="{{imgUrl}}"></image>
+  </view>
+</view> -->
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <view id="business-name">
+    <view class="business-name">商家名称</view>
+    <input name="businessname" placeholder='请填写' class="business-tx"></input>
+  </view>
+  <view id="Contacts">
+    <view class="business-name">联系人</view>
+    <input name="Contacts" placeholder='请填写' class="business-tx"></input>
+  </view>
+  <view id="Telephone">
+    <view class="business-name">联系电话</view>
+    <input name="Telephone" placeholder='请填写' class="business-tx"></input>
+  </view>
+  <view id="Wechat">
+    <view class="business-name">商家微信号</view>
+    <input name="Wechat" placeholder='请填写' class="business-tx"></input>
+  </view>
+  <view id="address">
+    <view class="business-name">商家地址</view>
+    <input name="address" placeholder='请填写' class="business-tx"></input>
+  </view>
+  <view id="classification">
+    <view class="business-name">选择分类</view>
+    <view class="classification-jiantou">></view>
+      <picker name="classification" bindchange="bindPickerChange" value="{{index}}" range="{{array}}"> 
+        <view class="picker">
+            {{array[index]}} 
+        </view> 
+      </picker>
+  </view>
+  <view id="introduce">
+    <view class="business-name">商家介绍 </view>
+    <textarea name="introduce" class='introduce-content' placeholder='请填写'></textarea>
+  </view>
+  <button formType="submit" class="tijiao">提交</button>
+</form>

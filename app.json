@@ -3,13 +3,14 @@
     "pages/telbook/index/index",
     "pages/telbook/store/store",
     "pages/telbook/business/business",
+    "pages/telbook/details/details",
     "pages/user/user",
     "pages/canvas/canvas",
     "pages/dateils/dateils",
     "pages/index/index",
     "pages/price/price",
     "pages/admin/telbook/index",
-     "pages/admin/price/index"
+    "pages/admin/price/index"
   ],
   "window":{
     "backgroundTextStyle":"light",

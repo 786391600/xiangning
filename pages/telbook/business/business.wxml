@@ -30,7 +30,7 @@
 </view> -->
 <view id="join">
   <button class="join" open-type="share">生成朋友圈分享图</button>
-  <button class="join" >我是商家,我要入驻</button> 
+  <button class="join" bindtap='details'>我是商家,我要入驻</button> 
 </view>
 <view id="zhezhao" animation="{{animation}}" bindtap='yc'>
   <view class="dian-gg">{{name}}</view>
