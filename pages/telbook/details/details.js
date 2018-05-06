@@ -1,13 +1,21 @@
 // pages/settled/settled.js
+var until = require('../../../utils/util.js'); 
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    id:"",
+    title:'',
     imgUrl:null,
     array: ['婚纱', '餐饮', '超市', '健康'],
     index: 0,
+    gonggao: [
+      { title: '招聘', content: '急招一名服务员' },
+      { title: '活动', content: '购买就送精美包装，方便送礼' },
+      { title: '活动', content: '七夕节本店推出"浪漫情人节，唯爱一生不变"的活动将优惠进行到底，让浪漫与你同在' },
+    ]
   },
 
   /**
@@ -93,7 +101,15 @@ Page({
         mask: true
       })
     }else{
-      console.log(e)
+      let query = {id:this.data.id,details:e.detail.value}
+      this.changeDetails(query,function(response){
+        wx.showToast({
+          title: '更新成功',
+          icon: 'success',
+          duration: 1000,
+          mask: true
+        })
+      })
        //提交
     // wx.request({
     //   url: '',
@@ -117,11 +133,60 @@ Page({
     // })
     }
   },
+  changeDetails (data,callback) {
+    let that = this;
+    until.send({
+      action: 'app.telbook.changeDetails', data: data
+    },
+      function (response) {
+        if (response.error) {
+          console.log(error)
+        } else {
+          if (typeof callback === 'function') {
+            callback(response);
+          }
+        }
+      })
+  },
+  typeUpdate: function (e) {
+    var gonggao = this.data.gonggao;
+    if (e.target.dataset.type == 'title') {
+      gonggao[e.target.dataset.index].title = e.detail.value
+    } else if (e.target.dataset.type == 'content') {
+      gonggao[e.target.dataset.index].content = e.detail.value
+    }
+  },
+  NoticeSubmit: function (e) {
+    console.log(this.data.gonggao)
+  },
+  /**
+   * 添加公告数据
+   */
+  addNotice: function () {
+    var obj = { title: '', content: '' }
+    var gonggao = this.data.gonggao;
+    gonggao.push(obj);
+    this.setData({
+      gonggao: gonggao
+    })
+  },
+  /**
+   * 删除公告数据
+   */
+  NoticeDelete: function (e) {
+    var gonggao = this.data.gonggao;
+    gonggao.splice(e.target.dataset.index, 1);
+    this.setData({
+      gonggao: gonggao
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-   
+   if (options.id) {
+     this.setData({id:options.id,title:options.title})
+   }
   },
 
   /**

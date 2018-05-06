@@ -1,8 +1,8 @@
 <!--pages/business/business.wxml-->
 <!-- <view id="business-img"></view> -->
 <!-- <view id="banner"><image src='../../img/456.jpg'></image></view> -->
-<view id="business-name">{{name}}</view>
-<view id="business-introduce">{{introduce}}</view>
+<view id="business-name">{{details.businessname}}</view>
+<view id="business-introduce">{{details.introduce}}</view>
 <view id="gonggaoid" bindtap='chuxian'>
 <image class='gonggao-beij' src='{{bgurl}}'></image>
   <!-- <view class="gonggao">公 告</view> -->
@@ -18,11 +18,11 @@
 </view>
 <view id="time">
   <view class="time">营业时间</view>
-  <view class="time-content">{{time}}</view>
+  <view class="time-content">{{details.time}}</view>
 </view>
 <view id="time">
   <view class="time">详细地址</view>
-  <view class="time-content">{{dizhi}}</view>
+  <view class="time-content">{{details.address}}</view>
 </view>
 <!-- <view id="time">
   <view class="time">联系方式</view>
@@ -41,7 +41,7 @@
   <view class="dibu-left" open-type="share">收藏</view>
   <view class="dibu-right" bindtap='phonecallevent'>
     <view>一 键 拨 号</view>
-    <view>{{phonecall}}</view>
+    <view>{{details.Telephone}}</view>
   </view>
 </view>
 <!-- <view class="piaofu" bindtap='height1' >-</view> 
@@ -55,7 +55,7 @@
 <view id='wxid' style='display:{{block}}' bindtap='none'></view>
 <view class="wxid" style='display:{{block}}'>
     <view class='wxid-ts'>保存微信号进行添加</view>
-    <view class='wxid-content'>{{wxid}}</view>
+    <view class='wxid-content'>{{details.Wechat}}</view>
     <button bindtap='jianqie' class='wxid-fz'>一键复制</button>
 </view>
 
