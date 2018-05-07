@@ -1,10 +1,12 @@
 // pages/business/business.js
+var until = require('../../../utils/util.js'); 
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    details:{},
     name:'宠宠福利社',//商家店名
     introduce: '本店内所有龙猫用品均为本人自己制作，手工厕所、跳板 木窝（材质为杉木）、冰窝、栈道（材质为杨木）等用品。常规板子厚度均在1.7cm左右。各种尺寸可随意定做。',//商家介绍
     gonggao:[
@@ -61,10 +63,19 @@ Page({
     wx.showShareMenu({
       withShareTicket: true
     })
-  }, onShow(e) {
-    wx.showShareMenu({
-      withShareTicket: true
-    })
+    if (options.scene){
+      var scene = decodeURIComponent(options.scene)
+      this.getDetailData({ id: options.id })
+    }
+    if (options.details !='undefined'){
+      let details = JSON.parse(options.details)
+      console.log(details)
+      console.log('hhhhgggg')
+      this.setData({ id: options.id, details: details })
+    }
+  }, 
+  onShow(e) {
+   
   },
 
   /**
@@ -255,5 +266,20 @@ Page({
     this.setData({
       block:'none'
     })
+  },
+  getDetailData:function(data,callback){
+    var that = this;
+    until.send({
+      action: 'app.telbook.getDetails', data: data
+    },
+      function (response) {
+        if (response.error) {
+          console.log(error)
+        } else {
+          if (typeof callback === 'function') {
+            callback(response);
+          }
+        }
+      })
   }
 })

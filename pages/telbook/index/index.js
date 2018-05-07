@@ -76,8 +76,10 @@ Page({
   listDataClick:function(e){
     var id=e.target.dataset.id;
     var title=e.target.dataset.title;
+    var details = JSON.stringify(e.target.dataset.details);
+
     wx.navigateTo({
-      url: '../business/business?id='+id+'&title='+title
+      url: '../business/business?id=' + id + '&title=' + title +'&details='+details
     })
   },
   getClassData:function(callback){
@@ -87,6 +89,7 @@ Page({
       action:'app.telbook.getTelData',data:{}},
       function(response){
       if(response.data.success){
+        console.log(response)
         that.setData({classData: response.data.data, loadingHidden: false});
         if (typeof callback === 'function') {
           callback();

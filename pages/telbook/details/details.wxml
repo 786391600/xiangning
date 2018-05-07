@@ -9,7 +9,7 @@
 <form bindsubmit="formSubmit" bindreset="formReset">
   <view id="business-name">
     <view class="business-name">商家名称</view>
-    <input name="businessname" placeholder='请填写' class="business-tx"></input>
+    <input name="businessname" placeholder='请填写' class="business-tx" value='{{title}}'></input>
   </view>
   <view id="Contacts">
     <view class="business-name">联系人</view>
@@ -24,10 +24,14 @@
     <input name="Wechat" placeholder='请填写' class="business-tx"></input>
   </view>
   <view id="address">
+    <view class="business-name">营业时间</view>
+    <input name="time" placeholder='请填写' class="business-tx"></input>
+  </view>
+  <view id="address">
     <view class="business-name">商家地址</view>
     <input name="address" placeholder='请填写' class="business-tx"></input>
   </view>
-  <view id="classification">
+  <!-- <view id="classification">
     <view class="business-name">选择分类</view>
     <view class="classification-jiantou">></view>
       <picker name="classification" bindchange="bindPickerChange" value="{{index}}" range="{{array}}"> 
@@ -35,10 +39,25 @@
             {{array[index]}} 
         </view> 
       </picker>
-  </view>
+  </view> -->
   <view id="introduce">
     <view class="business-name">商家介绍 </view>
     <textarea name="introduce" class='introduce-content' placeholder='请填写'></textarea>
   </view>
   <button formType="submit" class="tijiao">提交</button>
+</form>
+<form bindsubmit="NoticeSubmit" bindreset="formReset" class='form'>
+  <view id="Notice-title">
+    <view class="Notice-name">公告类型</view>
+    <view class="Notice-name">公告内容</view>
+  </view>
+  <view id="Notice">
+    <view class="Notice" wx:for="{{gonggao}}">
+      <input placeholder='请填写' class="Notice-type" data-type='title' data-index='{{index}}' value='{{item.title}}' bindchange="typeUpdate"></input>
+      <textarea class='Notice-content' placeholder='请填写' data-type='content' data-index='{{index}}' value='{{item.content}}' bindblur="typeUpdate"></textarea>
+      <view class='Notice-delete' bindtap='NoticeDelete' data-index='{{index}}'>删除</view>
+    </view>
+    <view id="Notice-add" bindtap='addNotice'>+</view>
+  </view>
+   <button formType="submit" class="tijiao">提交</button> 
 </form>
