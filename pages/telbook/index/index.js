@@ -13,16 +13,6 @@ Page({
     currentTab: 0,
     classData:[],
     loadingHidden:false,
-    phone:[
-      { PhoneName: '乡宁向导', PhoneContent: '13934691550' },
-      { PhoneName: '乡宁向导', PhoneContent: '13934691550' },
-      { PhoneName: '乡宁向导', PhoneContent: '13934691550' },
-      { PhoneName: '乡宁向导', PhoneContent: '13934691550' },
-      { PhoneName: '乡宁向导', PhoneContent: '13934691550' },
-      { PhoneName: '乡宁向导', PhoneContent: '13934691550' },
-      { PhoneName: '乡宁向导', PhoneContent: '13934691550' },
-      { PhoneName: '乡宁向导', PhoneContent: '13934691550' }
-      ],
     page:1  
   },
   onReady: function () {
@@ -84,7 +74,7 @@ Page({
       url: '../business/business?id=' + id + '&title=' + title +'&details='+details+'&notice='+notice
     })
   },
-  getClassData:function(callback){
+  getClassData:function(type,callback){
     var that=this;
     var page = this.data.page
     that.setData({loadingHidden:true});
@@ -92,8 +82,12 @@ Page({
       action:'app.telbook.getTelList',data:{page:page}},
       function(response){
       if(response.data.success){
-        console.log(response)
-        that.setData({classData: response.data.data, loadingHidden: false});
+        if (type === 'refresh') {
+          var data = response.data.data
+        } else {
+          var data = response.data.data.length > 0 ? that.data.classData.concat(response.data.data) : that.data.classData
+        }
+        that.setData({ classData: data, loadingHidden: false });
         if (typeof callback === 'function') {
           callback();
         }
@@ -105,7 +99,8 @@ Page({
     })
   },
   onPullDownRefresh:function(){
-    this.getClassData(function(){
+    this.data.page = 1
+    this.getClassData("refresh",function(){
       wx.stopPullDownRefresh()
     });
   },
