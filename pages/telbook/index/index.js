@@ -12,7 +12,17 @@ Page({
     winHeight:0, 
     currentTab: 0,
     classData:[],
-    loadingHidden:false
+    loadingHidden:false,
+    phone:[
+      { PhoneName: '乡宁向导', PhoneContent: '13934691550' },
+      { PhoneName: '乡宁向导', PhoneContent: '13934691550' },
+      { PhoneName: '乡宁向导', PhoneContent: '13934691550' },
+      { PhoneName: '乡宁向导', PhoneContent: '13934691550' },
+      { PhoneName: '乡宁向导', PhoneContent: '13934691550' },
+      { PhoneName: '乡宁向导', PhoneContent: '13934691550' },
+      { PhoneName: '乡宁向导', PhoneContent: '13934691550' },
+      { PhoneName: '乡宁向导', PhoneContent: '13934691550' }
+      ]
   },
   onReady: function () {
     this.getClassData()
@@ -97,5 +107,11 @@ Page({
     this.getClassData(function(){
       wx.stopPullDownRefresh()
     });
-  }
+  },
+  /**
+   * 滚动条到底部触发函数
+   */
+  onReachBottom: function () {
+    console.log('加载中~')
+  },
 })  

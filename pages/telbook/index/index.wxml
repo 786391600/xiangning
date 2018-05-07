@@ -1,15 +1,25 @@
 <!--index.wxml--> 
 <loading wx:if='{{loadingHidden}}'>加载中</loading>
 <view class='header'>
-<view class='search'>
-  <icon class='iconfont icon-search'></icon><input placeholder='搜索...乡宁电话本' bindfocus='searchStart' bindblur='searchEnd'></input>
+  <view class='search'>
+    <icon class='iconfont icon-search'></icon>
+    <input placeholder='搜索...乡宁电话本' bindfocus='searchStart' bindblur='searchEnd'></input>
+  </view>
 </view>
-</view>
-<view wx:for="{{classData}}" wx:for-item="classDataOne" class='list' wx:if='{{!searchStart}}'>
+<!-- <view wx:for="{{classData}}" wx:for-item="classDataOne" class='list' wx:if='{{!searchStart}}'>
    <view bindtap='classToggle' data-index='{{index}}' data-toggle='{{classDataOne.toggle}}' class='listTitle'>{{classDataOne.title}}
       <i class='iconfont icon-down {{!classDataOne.toggle?"transform":""}}'></i>
    </view>
    <view wx:for="{{classDataOne.data}}" bindtap='listDataClick' data-id='{{classDataTwo.id}}' data-title='{{classDataTwo.title}}' wx:for-item="classDataTwo" wx:if='{{classDataOne.toggle}}' class='listData' >
       {{classDataTwo.title}}
    </view>
-</view>  
+</view>  -->
+  <view class='phone' wx:for="{{phone}}">
+    <view class="phone-name">
+      {{item.PhoneName}}
+      <view class='vip'><image src='../../../icon/VIP.png'></image></view>
+    </view>
+    <view class="phone-content">{{item.PhoneContent}}</view>
+    <view class="phone-icon"><i class='iconfont icon-phone'></i></view>
+  </view>
+  <view class="Loading-bottom">加载中~</view>
