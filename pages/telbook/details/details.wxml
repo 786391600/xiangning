@@ -6,7 +6,7 @@
     <image src="{{imgUrl}}"></image>
   </view>
 </view> -->
-<form bindsubmit="formSubmit" bindreset="formReset">
+<form bindsubmit="formSubmit" bindreset="formReset" wx:if='{{ source!="business" }}'>
   <view id="business-name">
     <view class="business-name">商家名称</view>
     <input name="businessname" placeholder='请填写' class="business-tx" value='{{title}}'></input>

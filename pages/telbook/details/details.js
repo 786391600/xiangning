@@ -8,13 +8,13 @@ Page({
   data: {
     id:"",
     title:'',
+    source:true,
     imgUrl:null,
     array: ['婚纱', '餐饮', '超市', '健康'],
     index: 0,
     gonggao: [
-      { title: '招聘', content: '急招一名服务员' },
-      { title: '活动', content: '购买就送精美包装，方便送礼' },
-      { title: '活动', content: '七夕节本店推出"浪漫情人节，唯爱一生不变"的活动将优惠进行到底，让浪漫与你同在' },
+      { title: '招聘', content: '' },
+      { title: '活动', content: '' },
     ]
   },
 
@@ -101,36 +101,8 @@ Page({
         mask: true
       })
     }else{
-      let query = {id:this.data.id,details:e.detail.value}
-      this.changeDetails(query,function(response){
-        wx.showToast({
-          title: '更新成功',
-          icon: 'success',
-          duration: 1000,
-          mask: true
-        })
-      })
-       //提交
-    // wx.request({
-    //   url: '',
-    //   data: {
-    //     businessname: e.detail.value.businessname,//商家名称
-    //     Contacts: e.detail.value.Contacts,//联系人
-    //     Telephone: e.detail.value.Telephone,//联系电话
-    //     Wechat: e.detail.value.Wechat,//商家微信号
-    //     address: e.detail.value.address,//商家地址
-    //     classification: e.detail.value.classification,//选择分类
-    //     introduce: e.detail.value.introduce//商家介绍
-    //   },
-    //   method: 'POST',
-    //   success: function (requestRes) {
-    //     that.setData({ submitHidden: true })
-    //     appInstance.userState.status = 0
-    //     wx.navigateBack({
-    //       delta: 1
-    //     })
-    //   },
-    // })
+      let query = { id: this.data.id, setData: { details: e.detail.value}}
+      this.changeDetails(query)
     }
   },
   changeDetails (data,callback) {
@@ -142,6 +114,12 @@ Page({
         if (response.error) {
           console.log(error)
         } else {
+          wx.showToast({
+            title: '更新成功',
+            icon: 'success',
+            duration: 1000,
+            mask: true
+          })
           if (typeof callback === 'function') {
             callback(response);
           }
@@ -158,6 +136,9 @@ Page({
   },
   NoticeSubmit: function (e) {
     console.log(this.data.gonggao)
+    console.log(this.data.id)
+    let query = { id: this.data.id, setData: { notice: this.data.gonggao } }
+    this.changeDetails(query)
   },
   /**
    * 添加公告数据
@@ -184,8 +165,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options)
    if (options.id) {
-     this.setData({id:options.id,title:options.title})
+     console.log(options)
+     this.setData(options)
    }
   },
 

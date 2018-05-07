@@ -6,17 +6,9 @@ Page({
    * 页面的初始数据
    */
   data: {
+    id:'',
     details:{},
-    name:'宠宠福利社',//商家店名
-    introduce: '本店内所有龙猫用品均为本人自己制作，手工厕所、跳板 木窝（材质为杉木）、冰窝、栈道（材质为杨木）等用品。常规板子厚度均在1.7cm左右。各种尺寸可随意定做。',//商家介绍
-    gonggao:[
-       {lx:'招聘', gg:'急招一名服务员'},
-       {lx:'活动', gg: '购买就送精美包装，方便送礼'},
-       { lx: '活动', gg: '七夕节本店推出"浪漫情人节，唯爱一生不变"的活动将优惠进行到底，让浪漫与你同在' },
-    ],//商家公告
-    phonecall: '13934691550',//商家电话
-    time:'08:00-20:00',//营业时间
-    dizhi:'武汉光谷西班牙风情街C2101（肯德基楼上）',//商家地址
+    notice:{},
     animation: '',
     animation1: '',
     jiajian:'block',
@@ -42,8 +34,10 @@ Page({
     })
   },
   details: function () {
+    var id = this.data.id;
+    console.log(id)
     wx.navigateTo({
-      url: '../detailsupdate/detailsupdate'
+      url: '../details/details?id=' + id +'&source=business'
     })
   },
 
@@ -67,12 +61,10 @@ Page({
       var scene = decodeURIComponent(options.scene)
       this.getDetailData({ id: options.id })
     }
-    if (options.details !='undefined'){
       let details = JSON.parse(options.details)
-      console.log(details)
-      console.log('hhhhgggg')
-      this.setData({ id: options.id, details: details })
-    }
+      let notice = until.getArrData(JSON.parse(options.notice))
+      console.log(notice)
+      this.setData({ id: options.id, details: details,notice:notice }) 
   }, 
   onShow(e) {
    

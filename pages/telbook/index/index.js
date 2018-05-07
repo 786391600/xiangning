@@ -22,7 +22,8 @@ Page({
       { PhoneName: '乡宁向导', PhoneContent: '13934691550' },
       { PhoneName: '乡宁向导', PhoneContent: '13934691550' },
       { PhoneName: '乡宁向导', PhoneContent: '13934691550' }
-      ]
+      ],
+    page:1  
   },
   onReady: function () {
     this.getClassData()
@@ -75,18 +76,20 @@ Page({
   },
   listDataClick:function(e){
     var id=e.target.dataset.id;
-    var title=e.target.dataset.title;
-    var details = JSON.stringify(e.target.dataset.details);
-
+    var dataSet = e.target.dataset
+    var title=dataSet.title;
+    var details =dataSet.details? JSON.stringify(dataSet.details):'{}';
+    var notice = dataSet.notice ? until.getArrData(dataSet.notice,'string'):'{}';
     wx.navigateTo({
-      url: '../business/business?id=' + id + '&title=' + title +'&details='+details
+      url: '../business/business?id=' + id + '&title=' + title +'&details='+details+'&notice='+notice
     })
   },
   getClassData:function(callback){
     var that=this;
+    var page = this.data.page
     that.setData({loadingHidden:true});
     until.send({
-      action:'app.telbook.getTelData',data:{}},
+      action:'app.telbook.getTelList',data:{page:page}},
       function(response){
       if(response.data.success){
         console.log(response)
@@ -100,11 +103,6 @@ Page({
         }
       }
     })
-    // until.send({
-    //   action: 'app.telbook.addTelList', data: { title:'酒店  火锅  饭店'}},function(response){
-    //   // that.setData({classData:response.data.data});
-    //   console.log(response)
-    // })
   },
   onPullDownRefresh:function(){
     this.getClassData(function(){
@@ -115,6 +113,7 @@ Page({
    * 滚动条到底部触发函数
    */
   onReachBottom: function () {
-    console.log('加载中~')
+    this.data.page++;
+    this.getClassData();
   },
 })  

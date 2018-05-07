@@ -4,7 +4,7 @@
    <view bindtap='classToggle' data-index='{{index}}' data-id='{{classDataOne._id}}' data-toggle='{{classDataOne.toggle}}' data-title='{{classDataOne.title}}' class='listTitle'>{{classDataOne.title}}
       <i class='iconfont icon-down {{!classDataOne.toggle?"transform":""}}'></i>
    </view>
-   <view wx:for="{{classDataOne.data}}" bindtap='listDataClick' data-id='{{classDataTwo.id}}' data-title='{{classDataTwo.title}}' wx:for-item="classDataTwo" wx:if='{{classDataOne.toggle}}' class='listData' >
+   <view wx:for="{{classDataOne.data}}" bindtap='listDataClick' data-id='{{classDataTwo._id}}' data-title='{{classDataTwo.title}}' wx:for-item="classDataTwo" wx:if='{{classDataOne.toggle}}' class='listData' >
       {{classDataTwo.title}}
    </view>
 </view>  

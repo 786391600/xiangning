@@ -222,6 +222,21 @@ var showToast=function(title, icon, time) {
   })
 }
 
+function getArrData(arr,type) {
+  var setArr = []
+  if(type==='string'){
+    for (let i = 0; i < arr.length; i++) {
+      setArr.push(JSON.stringify(arr[i]))
+    }
+    return JSON.stringify(setArr)
+  }else{
+    for (let i = 0; i < arr.length; i++) {
+      setArr.push(JSON.parse(arr[i]))
+    }
+    return setArr
+  }
+}
+
 /**
  * send发送请求
  * data{
@@ -236,5 +251,6 @@ module.exports = {
   formatTime: formatTime,
   send:sendAction,
   validate:validate,
-  showToast:showToast
+  showToast:showToast,
+  getArrData: getArrData
 }

@@ -56,7 +56,7 @@ Page({
     var id = e.target.dataset.id;
     var title = e.target.dataset.title;
     wx.navigateTo({
-      url: 'pages/telbook/store/store?id=' + id + '&title=' + title
+      url: '/pages/telbook/details/details?id=' + id + '&title=' + title
     })
   },
   getClassData: function (callback) {
