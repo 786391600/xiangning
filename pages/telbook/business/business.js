@@ -41,7 +41,7 @@ Page({
   },
   details: function () {
     wx.navigateTo({
-      url: '../details/details'
+      url: '../detailsupdate/detailsupdate'
     })
   },
 

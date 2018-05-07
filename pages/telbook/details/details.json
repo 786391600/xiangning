@@ -1,4 +1,5 @@
 {
   "navigationBarTitleText": "入驻",
-  "navigationBarBackgroundColor": "#FED636"
+  "navigationBarBackgroundColor": "#FED636",
+  "navigationBarTextStyle": "white"
 }

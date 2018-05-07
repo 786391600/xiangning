@@ -4,6 +4,7 @@
     "pages/telbook/store/store",
     "pages/telbook/business/business",
     "pages/telbook/details/details",
+    "pages/telbook/detailsupdate/detailsupdate",
     "pages/user/user",
     "pages/canvas/canvas",
     "pages/dateils/dateils",
@@ -23,24 +24,24 @@
     "list": [
       {
         "pagePath": "pages/telbook/index/index",
-        "text": "首页",
-        "iconPath": "pages/index/img/index.png",
-          "selectedIconPath":"pages/index/img/index-select.png"
+        "text": "商家录",
+        "iconPath": "icon/TelephoneBook.png",
+          "selectedIconPath":"icon/TelephoneBook-select.png"
       },
       {
       "pagePath": "pages/price/price",
       "text": "菜价",
-      "iconPath": "pages/user/img/user.png",
-      "selectedIconPath": "pages/user/img/user-select.png"
+      "iconPath": "icon/Supermarket.png",
+      "selectedIconPath": "icon/Supermarket-select.png"
      }
       ,{
         "pagePath": "pages/user/user",
         "text": "我的",
-        "iconPath": "pages/user/img/user.png",
-        "selectedIconPath": "pages/user/img/user-select.png"
+        "iconPath": "icon/user.png",
+        "selectedIconPath": "icon/user-select.png"
       }],
-    "color":"#bfbfbf",
-    "selectedColor":"#1aad16",
+    "color":"#8a8a8a",
+    "selectedColor":"#FED636",
     "backgroundColor":"white",
     "borderStyle": "#bfbfbf"
   }
