@@ -136,3 +136,70 @@
 .table-box:nth-of-type(2n+1){
   border-right: 1rpx solid #ccc;
 }
+
+#Outerbox{
+  display: flex;
+  flex-wrap: wrap;
+}
+.Innerbox{
+  width: 50%;
+  height: 220rpx;
+  border-radius: 20rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box{
+  width: 90%;
+  height: 90%;
+  background: #E74540;
+  border-radius: 30rpx;
+  overflow: hidden;
+  border: 3rpx #794201 solid;
+}
+.box-top{
+  background: #fed636;
+  padding: 10rpx;
+  text-align: center;
+  border-bottom: 3rpx #794201 solid;
+}
+.box-bottom{
+  width: 90%;
+  height: 50%;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 10rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.box-bottom view{
+  background: #fff;
+  border-radius: 5rpx;
+}
+.box-bottom view:nth-child(1){
+  width: 10%;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10rpx;
+  padding: 0 5rpx;
+}
+.box-bottom view:nth-child(2){
+  width: 55%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.box-bottom view:nth-child(3){
+  width: 35%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10rpx;
+  padding: 0 5rpx;
+}

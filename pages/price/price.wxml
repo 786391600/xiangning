@@ -10,8 +10,8 @@
     </view>
   </picker>
 </view>
-<view class='table'>
-   <!-- <view class='table-head'>
+<!-- <view class='table'>
+    <view class='table-head'>
      <view class='row'>名称</view>
      <view class='row'>价格</view>
      <view class='row'>单位</view>
@@ -22,7 +22,8 @@
      <view class='row'>{{item.price}}</view>
      <view class='row'>{{item.com}}</view>
    </view> 
-  </view> -->
+  </view> 
+
   <view class='table'>
    <view class='table-box' wx:for='{{priceArr}}'>
      <view class='table-box-row'>{{item.name}}</view>
@@ -31,7 +32,21 @@
      <view class='table-box-row-title'>{{priceTime}}</view>
    </view> 
   </view>
+</view> -->
+
+<view id="Outerbox">
+  <view class="Innerbox" wx:for='{{priceArr}}'>
+    <view class="box">
+      <view class='box-top'>{{item.name}}</view>
+      <view class='box-bottom'>
+        <view>¥</view>
+        <view>{{item.price}}</view>
+        <view>{{item.com}}</view>
+      </view>
+    </view>
+  </view>
 </view>
+
 <view class='Forward'>
   <button open-type='share'>转发</button>
   <button bindtap='getQR'>获取二维码</button>

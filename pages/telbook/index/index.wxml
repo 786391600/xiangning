@@ -6,7 +6,7 @@
     <input placeholder='搜索...乡宁电话本' bindfocus='searchStart' bindblur='searchEnd'></input>
   </view>
 </view>
-<!-- <view wx:for="{{classData}}" wx:for-item="classDataOne" class='list' wx:if='{{!searchStart}}'>
+ <!-- <view wx:for="{{classData}}" wx:for-item="classDataOne" class='list' wx:if='{{!searchStart}}'>
    <view bindtap='classToggle' data-index='{{index}}' data-toggle='{{classDataOne.toggle}}' class='listTitle'>{{classDataOne.title}}
       <i class='iconfont icon-down {{!classDataOne.toggle?"transform":""}}'></i>
    </view>
