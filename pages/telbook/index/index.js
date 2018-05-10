@@ -65,8 +65,8 @@ Page({
     that.setData({searchStart:false});
   },
   listDataClick:function(e){
-    var id=e.target.dataset.id;
-    var dataSet = e.target.dataset
+    var id = e.currentTarget.dataset.id;
+    var dataSet = e.currentTarget.dataset
     var title=dataSet.title;
     var details =dataSet.details? JSON.stringify(dataSet.details):'{}';
     var notice = dataSet.notice ? until.getArrData(dataSet.notice,'string'):'{}';
@@ -111,4 +111,12 @@ Page({
     this.data.page++;
     this.getClassData();
   },
+  dailing: function(e) {
+    var phone = e.currentTarget.dataset.phone;
+    if (phone) {
+      wx.makePhoneCall({
+        phoneNumber: phone
+      })
+    }
+  }
 })  

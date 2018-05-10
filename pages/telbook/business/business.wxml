@@ -32,11 +32,14 @@
   <button class="join" bindtap='details'>我是商家,我要入驻</button> 
 </view>
 <view id="zhezhao" animation="{{animation}}" bindtap='yc'>
-  <view class="dian-gg">{{name}}</view>
-  <view class="gg-con" wx:for="{{notice}}" wx:key="unique"><view class="boxqiu">{{item.title}}</view>{{item.content}}</view>
+  <!-- <view class="dian-gg">{{details.businessname}}</view> -->
+  <view class="gg-con" wx:for="{{notice}}" wx:key="unique">
+    <view class="boxqiu">{{item.title}}</view>
+    <text class="gonggao-content">{{item.content}}</text>
+  </view>
 </view>
 <view id="dibu">
-  <view class="dibu-left">首页</view>
+  <view class="dibu-left" bindtap='index'>首页</view>
   <view class="dibu-left" open-type="share">收藏</view>
   <view class="dibu-right" bindtap='phonecallevent'>
     <view>一 键 拨 号</view>

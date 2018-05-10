@@ -40,14 +40,23 @@ Page({
       url: '../details/details?id=' + id +'&source=business'
     })
   },
+  index:function () {
+    console.log('ss')
+    wx.switchTab({
+      url: '/pages/telbook/index/index'
+    })
+  },
 
   /**
    * 打电话
    */
-  phonecallevent: function (e) {
-    wx.makePhoneCall({
-      phoneNumber: this.data.phonecall
-    })
+  phonecallevent: function () {
+    var phone = this.data.details.Telephone
+    if (phone){
+      wx.makePhoneCall({
+        phoneNumber: phone
+      })
+    }
   },
 
   /**

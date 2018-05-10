@@ -89,9 +89,11 @@ page{
   margin: auto;
   text-align: center;
   line-height: 80rpx;
-  font-size: 40rpx;
   border-radius: 50rpx;
   background: #FED636;
+}
+.phone-icon .iconfont{
+  font-size: 46rpx;
 }
 .Loading-bottom{
   text-align: center;

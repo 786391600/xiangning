@@ -14,12 +14,12 @@
       {{classDataTwo.title}}
    </view>
 </view>  -->
-  <view class='phone' wx:for="{{classData}}" data-id='{{item._id}}' bindtap='listDataClick' data-notice='{{item.notice}}' data-details='{{item.details}}'>
+  <view class='phone' wx:for="{{classData}}" data-id='{{item._id}}' catch:tap='listDataClick' data-notice='{{item.notice}}' data-details='{{item.details}}'>
     <view class="phone-name">
       {{item.title}}
       <view class='vip'><image src='../../../icon/VIP.png'></image></view>
     </view>
     <view class="phone-content">{{item.details.Telephone}}</view>
-    <view class="phone-icon"><i class='iconfont icon-phone'></i></view>
+    <view class="phone-icon" catch:tap='dailing' data-phone='{{item.details.Telephone}}'><i class='iconfont icon-phone'></i></view>
   </view>
   <view class="Loading-bottom">加载中~</view>

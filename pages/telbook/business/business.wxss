@@ -109,23 +109,29 @@ image{
   font-size: 70rpx;
 }
 .boxqiu{
-  height: 36rpx;
-  position: absolute;
-  top: 6rpx;
-  left: -88rpx;
-  font-size: 36rpx;
-  line-height: 36rpx;
+  margin: 0 auto;
+  font-size: 50rpx;
   background: #FF534D; 
   color: #fff;
-  padding: 2rpx; 
-  /* float: left; */
+  padding: 2rpx 10rpx;
+  text-align: center;
+}
+.gonggao-content{
+  width: 90%;
+  margin: 25rpx auto 30rpx 30rpx;
+  /* color: #ff5d64; */
+  overflow:hidden;
+  text-overflow:ellipsis; 
+  white-space:nowrap;   
+  font-size: 34rpx; 
 }
 .gg-con{
-  width: 80%;
-  margin: 30rpx auto 30rpx 100rpx;
+  width: 100%;
+  margin: 30rpx 0 30rpx 0;
   color: #000;
-  position: relative;
   font-size: 34rpx;
+  display: flex;
+  flex-wrap: wrap;
 }
 .dianjixiangqing{
   width: 146rpx;

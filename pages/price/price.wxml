@@ -1,15 +1,28 @@
     <loading wx:if='{{loadingHidden}}'>加载中</loading>
-<view class='title'>
-   乡宁菜价
-</view>
-<view class='time'>菜价时间：{{priceTime}}</view>
-<view class="section">
-  <picker bindchange="bindPickerChange" range="{{priceClassArr}}" range-key='name'>
-    <view class="picker">
-    <view class='picker-box'>点击选择</view><view class='picker-box'>{{priceClassArr[classIndex].name}}</view>
+<view class='header-box'>
+ <image src='http://pic.58pic.com/58pic/15/35/79/24G58PICNvi_1024.jpg'></image>
+  <view id='title'>
+  </view> 
+    <view class='title'>
+      乡宁{{priceClassArr[classIndex].name}}菜价
     </view>
-  </picker>
+    <view class='time'>更新时间：{{priceTime}}</view>
+    <!-- <view class="section">
+      <picker bindchange="bindPickerChange" range="{{priceClassArr}}" range-key='name'>
+        <view class="picker">
+        <view class='picker-box'>点击选择</view><view class='picker-box'>{{priceClassArr[classIndex].name}}</view>
+        </view>
+      </picker>
+    </view> -->
+
+    <view class="Choice">
+      <picker bindchange="bindPickerChange" range="{{priceClassArr}}" range-key='name'>
+        <view class='Choice-shop'>切换选择超市</view>
+      </picker>
+    </view>
+  
 </view>
+
 <!-- <view class='table'>
     <view class='table-head'>
      <view class='row'>名称</view>
@@ -39,18 +52,18 @@
     <view class="box">
       <view class='box-top'>{{item.name}}</view>
       <view class='box-bottom'>
-        <view>¥</view>
-        <view>{{item.price}}</view>
+        <!-- <view>¥</view> -->
+        <view>¥{{item.price}}</view>
         <view>{{item.com}}</view>
       </view>
     </view>
   </view>
 </view>
 
-<view class='Forward'>
+<!-- <view class='Forward'>
   <button open-type='share'>转发</button>
   <button bindtap='getQR'>获取二维码</button>
   <button bindtap='uploadImg'>上传图片</button>
   <canvas canvas-id='myCanvas' class='{{canvasClass}}'></canvas>
   <image src='{{imgUrl}}'></image>
-</view>
+</view> -->
