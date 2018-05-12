@@ -66,6 +66,7 @@
 <view class="wxid" style='display:{{block}}'>
     <view class='wxid-ts'>保存微信号进行添加</view>
     <view class='wxid-content'>{{details.Wechat}}</view>
+    <view class='wxid-content'>{{details.Contacts}}</view>
     <button bindtap='jianqie' class='wxid-fz'>一键复制</button>
 </view>
 

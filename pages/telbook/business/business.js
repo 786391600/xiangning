@@ -15,7 +15,6 @@ Page({
     image: '',
     flexNavState: true,
     zhezhaoState:false,
-    wxid:'123123',
     block:'none',
     bgurl:'http://i4.bvimg.com/644269/b1373666854749d3.jpg',
     Sponsor: [
@@ -253,7 +252,7 @@ Page({
    */
   jianqie:function(){
     wx.setClipboardData({
-      data: this.data.wxid,
+      data: this.data.details.Wechat,
       success: function (res) {
         wx.getClipboardData({
           success: function (res) {

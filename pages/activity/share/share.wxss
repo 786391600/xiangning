@@ -1,0 +1,222 @@
+/* pages/activity/share.wxss */
+page{
+   background: #E03636; 
+}
+image{
+  width: 100%;
+  height: 100%;
+}
+#banner{
+  width: 100%;
+  height: 450rpx;
+  background: #000;
+}
+#Ranking-box{
+  color: #000;
+  width: 600rpx;
+  height: 466rpx;
+  margin: 0 auto;
+  margin-top: -80rpx;
+  background: #fff;
+  border-radius:3%; 
+  overflow: hidden; 
+  position: relative;
+  /* box-shadow: 0rpx 0rpx 20rpx #cac8c9; */
+}
+.user{
+  width: 122rpx;
+  height: 122rpx;
+  border-radius: 50%; 
+  background: #5b5b5b;
+  z-index: 998;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 292rpx;
+  margin: auto;
+  overflow: hidden;
+  /* border: 2rpx #ffa456 solid; */
+}
+.user-name{
+   font-size:24rpx;  
+   text-align: center;
+   margin-top: 90rpx;
+}
+.Ranking{
+  text-align: center;
+  font-size: 50rpx;
+  margin-top: 30rpx;
+}
+ #energy{
+  margin-top: 30rpx;
+} 
+.energy-new{
+  width: 50%;
+  float: left;
+  text-align: center;
+}
+.energy-all{
+  width: 50%;
+  float: left;
+  text-align: center;
+} 
+.num-new{
+  margin-top: 14rpx;
+}
+.num-all{
+  margin-top: 14rpx;
+}
+#share{
+  width: 100%;
+  height:100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  background: #FF534D;
+  position: absolute;
+  bottom: 0;
+  color: #000;
+}
+#rule{
+  margin-top: 60rpx;
+}
+#rule view{
+  text-align: center;
+  color: #ffa372;
+  font-size: 26rpx;
+}
+#ranking{
+  width: 600rpx;
+  margin: 0 auto;
+  border-radius: 11rpx;
+  overflow: hidden;
+  margin-top: 54rpx; 
+  margin-bottom: 54rpx; 
+  /* box-shadow: 0 0 20rpx #cac8c9; */
+  background: #EDD0BE;
+}
+.ranking-new{
+  background: #FF534D;
+  text-align: center;
+  padding: 30rpx 0;
+}
+.details{
+  height: 94rpx;
+  border-bottom: 1rpx #ececec solid;
+}
+.details view{
+  color: #3398cc;
+  font-size: 26rpx;
+  line-height: 94rpx;
+  float: right;
+  margin-right: 68rpx;
+}
+.User-ranking{
+  width: 100%;
+  height: 94rpx;
+  border-bottom: 1rpx #ececec solid;
+}
+.user-num{
+  line-height: 94rpx;
+  margin:0 40rpx;
+  float: left;
+}
+.user-photo{
+  width: 60rpx;
+  height: 60rpx;
+  background: #4c3629;
+  border-radius:50%; 
+  float: left;
+  margin-top: 17rpx;
+  margin-right: 54rpx;
+  overflow: hidden;
+}
+.user-Name{
+  line-height: 94rpx;
+  float: left;
+  font-size:25rpx; 
+}
+.all-num{
+  line-height: 94rpx;
+  float: right;
+  margin-right: 68rpx;
+}
+.Prompt{
+  width: 100%;
+  height: 94rpx;
+  background: #FF534D;
+  text-align: center;
+  line-height: 94rpx;
+  font-size: 22rpx;
+}
+#detailed{
+  width: 100%;
+  border-top:1rpx #e47466 solid; 
+}
+.guize{
+  width: 638rpx;
+  margin: 0 auto;
+  margin-top:60rpx;
+  overflow: hidden;
+  color: #ffa372;
+}
+#detailed .guize .ball{
+  width: 22rpx;
+  height: 22rpx;
+  border-radius:50%;
+  background: #ffb071;
+  margin-top:11rpx; 
+  margin-right: 22rpx;
+  float: left;
+}
+#detailed .guize .content{
+  float: left;
+  width: 592rpx;
+  font-size: 24rpx;
+}
+.content-xq{
+  color:#ff8d5e;
+  font-size:26rpx;
+  text-align: center;
+  margin-top: 72rpx;
+  margin-bottom: 72rpx;
+}
+.together-box{
+  display: flex;
+  justify-content: center;
+}
+.together{
+  width: 314rpx;
+  height: 90rpx;
+  margin: 0 auto;
+  border-radius:10rpx;
+  background: #ff9e1b;
+  line-height: 90rpx; 
+  text-align: center;
+  margin-top:40rpx;
+  margin-bottom: 40rpx; 
+  font-size: 24rpx;
+  color: #8c2e00;
+}
+.guanggaoshang{
+  width: 692rpx;
+  margin: 0 auto;
+}
+.guanggao{
+  width: 692rpx;
+  height: 199rpx;
+  margin-bottom: 30rpx;
+  background: #fff;
+  position: relative;
+}
+.zanzhu{
+  padding: 4rpx 8rpx;
+  border-radius:5rpx; 
+  position: absolute;
+  left:9rpx;
+  top:9rpx;
+  background: #000;
+  color: #fff;
+  font-size: 22rpx;
+  text-align: center;
+  opacity: 0.8;
+}

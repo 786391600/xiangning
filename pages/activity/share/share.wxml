@@ -1,0 +1,64 @@
+<!--pages/activity/share.wxml-->
+<view id="banner"><image src=''></image></view>
+<view id="activity">
+  <view class="user"><image class="avatar" src='{{userInfo.avatarUrl}}'></image></view>  <!-- 用户头像 -->
+  <view id="Ranking-box">
+    <view class="user-name">{{userInfo.nickName}}</view>
+    <view class="Ranking">小组赛第一名</view>
+    <view id="energy">
+      <view class="energy-new">
+        <view class="energy-newname">今日能量值</view>
+        <view class="num-new">14</view>
+      </view>
+      <view class="energy-all">
+        <view class="energy-newname">累计能量值</view>
+        <view class="num-all">107</view>
+      </view>
+    </view>
+    <view id="share">晒一下</view>
+  </view>
+</view>
+<view id="rule">
+  <view>活动结束后,小组前10名\n</view>
+  <view>均可参与抽奖,中奖率100%</view>
+</view>
+<view id="ranking"><!--实时排名-->
+  <view class="ranking-new">实时排名</view>
+  <view class="details">
+    <view>排行榜详情></view>
+  </view>
+  <view class="User-ranking">
+      <view class="user-num">1.</view><!--用户排行-->
+      <view class="user-photo">
+        <image class="avatar" src='{{userInfo.avatarUrl}}'></image>
+      </view><!--用户照片-->
+      <view class="user-Name">盛夏</view><!--用户姓名-->
+      <view class="all-num">107</view><!--用户总能量-->
+  </view>
+  <view class="Prompt">小组前十，继续保持哦~</view>
+</view>
+<view class="together-box">
+  <view class="together">邀请好友共同开启</view>
+  <view class="together">分享至朋友圈</view>
+</view>
+<view class="guanggaoshang">
+  <view class="guanggao" wx:for="{{zanzhu}}" data-id="{{item.dizhi}}" bindtap='dizhi'>
+    <image src='{{item.tupian}}'></image>
+    <view class='zanzhu'>赞助商</view>
+  </view>
+</view>
+<view id="detailed">
+  <view class="guize">
+    <view class="ball"></view>
+    <view class="content">参与参与参与参与参与参与参与参与参与参与参与参与参与参与参与参与参与参与</view>
+  </view>
+  <view class="guize">
+    <view class="ball"></view>
+    <view class="content">参与参与参与参与参与参与参与参与参与参与参与参与参与参与参与参与参与参与</view>
+  </view>
+  <view class="guize">
+    <view class="ball"></view>
+    <view class="content">参与参与参与参与参与参与参与参与参与参与参与参与参与参与参与参与参与参与</view>
+  </view>
+  <view class="content-xq">活动详情规则></view>
+</view>

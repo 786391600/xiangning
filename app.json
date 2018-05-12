@@ -1,5 +1,5 @@
 {
-  "pages":[
+  "pages": [
     "pages/telbook/index/index",
     "pages/telbook/store/store",
     "pages/telbook/business/business",
@@ -10,14 +10,15 @@
     "pages/index/index",
     "pages/price/price",
     "pages/admin/telbook/index",
-    "pages/admin/price/index"
+    "pages/admin/price/index",
+    "pages/activity/share/share"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "white",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black",
-    "backgroundColor":"red"
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "red"
   },
   "tabBar": {
     "list": [
@@ -25,23 +26,24 @@
         "pagePath": "pages/telbook/index/index",
         "text": "商家录",
         "iconPath": "icon/TelephoneBook.png",
-          "selectedIconPath":"icon/TelephoneBook-select.png"
+        "selectedIconPath": "icon/TelephoneBook-select.png"
       },
       {
-      "pagePath": "pages/price/price",
-      "text": "菜价",
-      "iconPath": "icon/Supermarket.png",
-      "selectedIconPath": "icon/Supermarket-select.png"
-     }
-      ,{
+        "pagePath": "pages/price/price",
+        "text": "菜价",
+        "iconPath": "icon/Supermarket.png",
+        "selectedIconPath": "icon/Supermarket-select.png"
+      },
+      {
         "pagePath": "pages/user/user",
         "text": "我的",
         "iconPath": "icon/user.png",
         "selectedIconPath": "icon/user-select.png"
-      }],
-    "color":"#8a8a8a",
-    "selectedColor":"#FED636",
-    "backgroundColor":"white",
+      }
+    ],
+    "color": "#8a8a8a",
+    "selectedColor": "#FED636",
+    "backgroundColor": "white",
     "borderStyle": "#bfbfbf"
   }
 }

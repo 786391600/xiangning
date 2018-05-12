@@ -28,6 +28,11 @@ Page({
     wx.navigateTo({
       url: '/pages/telbook/details/details',
     })
+  },
+  shareClick:function(){
+    wx.navigateTo({
+      url: '/pages/activity/share/share',
+    })
   }
 })
 

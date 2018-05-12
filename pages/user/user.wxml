@@ -40,7 +40,7 @@
     <view class="Me-function" data-value='telbook'>商家录管理</view>
   </view>
  </view>
- <view id='Me-activity'>
+ <view id='Me-activity' bindtap='shareClick'>
   <view class='activity-box'>
     <image src='img/666_03.png'></image>
   </view>
