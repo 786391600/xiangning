@@ -17,11 +17,22 @@ Page({
     zhezhaoState:false,
     wxid:'123123',
     block:'none',
-    bgurl:'http://i4.bvimg.com/644269/b1373666854749d3.jpg'
+    bgurl:'http://i4.bvimg.com/644269/b1373666854749d3.jpg',
+    Sponsor: [
+      { pic: 'https://files.jb51.net/image/ali_300_1.jpg', url: '/pages/telbook/index/index' },
+    ]
   },
   /**
    * 页面跳转
    */
+  Jump: function (e) {
+    // wx.navigateTo({
+    //   url: e.currentTarget.dataset.id
+    // })
+    wx.switchTab({
+      url: e.currentTarget.dataset.id
+    })
+  },
   flexNavAnimate: function() {
     let height = this.data.flexNavState ? "330rpx": '0rpx';
     let state = !this.data.flexNavState
@@ -41,7 +52,6 @@ Page({
     })
   },
   index:function () {
-    console.log('ss')
     wx.switchTab({
       url: '/pages/telbook/index/index'
     })
@@ -195,6 +205,7 @@ Page({
    * 动效
    */
   chuxian: function () {
+    var info = wx.getSystemInfoSync()
     this.animation.opacity(0.98).height('100%').step()
     if (this.data.flexNavState) {
       this.flexNavAnimate()

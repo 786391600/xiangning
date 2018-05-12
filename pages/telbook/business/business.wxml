@@ -4,7 +4,7 @@
 <view id="business-name">{{details.businessname}}</view>
 <view id="business-introduce">{{details.introduce}}</view>
 <view id="gonggaoid" bindtap='chuxian'>
-<image class='gonggao-beij' src='{{bgurl}}'></image>
+  <image class='gonggao-beij' src='{{bgurl}}'></image>
   <!-- <view class="gonggao">公 告</view> -->
   <view class="gonggao-big">店铺公告</view>
   <view class="gonggao-content">
@@ -15,6 +15,13 @@
   </view>
   <view class="dianjixiangqing">查看更多</view>
 </view>
+
+<!--赞助商广告  -->
+<view class="Sponsor-box" wx:for="{{Sponsor}}" data-id="{{item.url}}" bindtap='Jump'>
+  <image src='{{item.pic}}'></image>
+  <view class='Sponsor'>赞助商</view>
+</view>
+
 <view id="time">
   <view class="time">营业时间</view>
   <view class="time-content">{{details.time}}</view>
@@ -33,10 +40,11 @@
 </view>
 <view id="zhezhao" animation="{{animation}}" bindtap='yc'>
   <!-- <view class="dian-gg">{{details.businessname}}</view> -->
-  <view class="gg-con" wx:for="{{notice}}" wx:key="unique">
-    <view class="boxqiu">{{item.title}}</view>
-    <text class="gonggao-content">{{item.content}}</text>
-  </view>
+    <view class="gg-con" wx:for="{{notice}}" wx:key="unique">
+      <view class="boxqiu">{{item.title}}</view>
+      <text class="gonggao-content">{{item.content}}</text>
+    </view>
+    <view id='zhezhao-bottom'></view>
 </view>
 <view id="dibu">
   <view class="dibu-left" bindtap='index'>首页</view>

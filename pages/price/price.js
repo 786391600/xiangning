@@ -8,7 +8,12 @@ Page({
     priceArr: [],
     priceTime:'',
     canvasClass:'canhide',
-    imgUrl:""
+    imgUrl:"",
+    msgList: [
+    { title: "多地首套房贷利率上浮 热点城市渐迎零折扣时代" },
+    { title: "悦如公寓三周年生日趴邀你免费吃喝欢唱" },
+    { title: "你想和一群有志青年一起过生日嘛？" }
+    ],
   },
   onLoad: function (options) {
     var scene = decodeURIComponent(options.scene)

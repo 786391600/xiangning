@@ -69,7 +69,7 @@ Page({
     var dataSet = e.currentTarget.dataset
     var title=dataSet.title;
     var details =dataSet.details? JSON.stringify(dataSet.details):'{}';
-    var notice = dataSet.notice ? until.getArrData(dataSet.notice,'string'):'{}';
+    var notice = dataSet.notice ? until.getArrData(dataSet.notice,'string'):'{}';       
     wx.navigateTo({
       url: '../business/business?id=' + id + '&title=' + title +'&details='+details+'&notice='+notice
     })
