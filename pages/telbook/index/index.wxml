@@ -22,4 +22,4 @@
     <view class="phone-content">{{item.details.Telephone}}</view>
     <view class="phone-icon" catch:tap='dailing' data-phone='{{item.details.Telephone}}'><i class='iconfont icon-phone'></i></view>
   </view>
-  <view class="Loading-bottom">加载中~</view>
+  <view class="Loading-bottom">{{Load}}</view>

@@ -12,8 +12,10 @@ Page({
     winHeight:0, 
     currentTab: 0,
     classData:[],
+    add:0,
     loadingHidden:false,
-    page:1  
+    page:1,
+    Load:'加载中~~'
   },
   onReady: function () {
     this.getClassData()
@@ -86,6 +88,15 @@ Page({
           var data = response.data.data
         } else {
           var data = response.data.data.length > 0 ? that.data.classData.concat(response.data.data) : that.data.classData
+          if (!that.data.add == response.data.data.length){
+            that.setData({
+              add: response.data.data.length 
+            })
+          } else if (that.data.add == response.data.data.length){
+            that.setData({
+               Load: '已到底~~'  
+            })
+          }
         }
         that.setData({ classData: data, loadingHidden: false });
         if (typeof callback === 'function') {
