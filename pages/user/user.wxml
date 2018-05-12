@@ -35,6 +35,10 @@
     <view class="Me-icon Me-icon4">!</view>
     <view class="Me-function">关于我们</view>
   </view>
+  <view class="Me-box">
+    <view class="Me-icon Me-icon4">!</view>
+    <view class="Me-function">关于我们</view>
+  </view>
  </view>
  <view id='Me-activity'>
   <view class='activity-box'>

@@ -73,6 +73,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-bottom: 30rpx;
 }
 .Me-icon{
   width: 117rpx;
