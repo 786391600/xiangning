@@ -23,21 +23,21 @@
     <view class="Me-icon Me-icon1">♥</view>
     <view class="Me-function">我的收藏</view>
   </view>
-  <view class="Me-box">
+  <view class="Me-box" bindtap='detailsClick'>
     <view class="Me-icon Me-icon2"></view>
     <view class="Me-function">商家入驻</view>
   </view>
-  <view class="Me-box">
-    <view class="Me-icon Me-icon3"></view>
-    <view class="Me-function">菜价管理</view>
+  <view class="Me-box" bindtap='adminClick' data-value='price'>
+    <view class="Me-icon Me-icon3"  data-value='price'></view>
+    <view class="Me-function"  data-value='price'>菜价管理</view>
   </view>
   <view class="Me-box">
     <view class="Me-icon Me-icon4">!</view>
     <view class="Me-function">关于我们</view>
   </view>
-  <view class="Me-box">
-    <view class="Me-icon Me-icon4">!</view>
-    <view class="Me-function">关于我们</view>
+  <view class="Me-box" bindtap='adminClick' data-value='telbook'>
+    <view class="Me-icon Me-icon4" data-value='telbook'>!</view>
+    <view class="Me-function" data-value='telbook'>商家录管理</view>
   </view>
  </view>
  <view id='Me-activity'>

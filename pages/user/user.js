@@ -23,6 +23,11 @@ Page({
     wx.navigateTo({
       url:'/pages/admin/'+t+'/index'
     })
+  },
+  detailsClick:function(){
+    wx.navigateTo({
+      url: '/pages/telbook/details/details',
+    })
   }
 })
 
