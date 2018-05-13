@@ -110,6 +110,9 @@ Page({
     })
   },
   onPullDownRefresh:function(){
+    this.setData({
+      Load: '加载中~~'
+    })
     this.data.page = 1
     this.getClassData("refresh",function(){
       wx.stopPullDownRefresh()
