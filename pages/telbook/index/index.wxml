@@ -3,7 +3,7 @@
 <view class='header'>
   <view class='search'>
     <icon class='iconfont icon-search'></icon>
-    <input placeholder='搜索...乡宁电话本' bindfocus='searchStart' bindblur='searchEnd'></input>
+    <input placeholder='搜索...乡宁电话本'  bindblur='searchEnd'></input>
   </view>
 </view>
  <!-- <view wx:for="{{classData}}" wx:for-item="classDataOne" class='list' wx:if='{{!searchStart}}'>
