@@ -4,6 +4,7 @@
     "pages/telbook/store/store",
     "pages/telbook/business/business",
     "pages/telbook/details/details",
+    "pages/telbook/search/index",
     "pages/user/user",
     "pages/canvas/canvas",
     "pages/dateils/dateils",

@@ -1,6 +1,6 @@
 //index.js  
 //获取应用实例 
-var until=require('../../../utils/util.js'); 
+var until=require('../../../utils/util.js');
 var app = getApp()
 Page({
   data: {
@@ -15,7 +15,7 @@ Page({
     add:0,
     loadingHidden:false,
     page:1,
-    Load:'加载中~~'
+    loading:false
   },
   onReady: function () {
     this.getClassData()
@@ -62,9 +62,15 @@ Page({
    var that=this;
    that.setData({searchStart:true})
   },
-  searchEnd:function(){
+  searchEnd:function(e){
     var that=this;
-    that.setData({searchStart:false});
+    if(e.detail.value){
+      wx.navigateTo({
+        url: '/pages/telbook/search/index?content='+e.detail.value
+      })
+    }else{
+      return
+    }
   },
   listDataClick:function(e){
     var id = e.currentTarget.dataset.id;
@@ -78,7 +84,10 @@ Page({
   },
   getClassData:function(type,callback){
     var that=this;
-    var page = this.data.page
+    var page = this.data.page;
+    if(that.data.loading){
+      return
+    }
     that.setData({loadingHidden:true});
     until.send({
       action:'app.telbook.getTelList',data:{page:page}},
@@ -88,17 +97,13 @@ Page({
           var data = response.data.data
         } else {
           var data = response.data.data.length > 0 ? that.data.classData.concat(response.data.data) : that.data.classData
-          if (!that.data.add == response.data.data.length){
-            that.setData({
-              add: response.data.data.length 
-            })
-          } else if (that.data.add == response.data.data.length){
-            that.setData({
-               Load: '已到底~~'  
-            })
+          if (response.data.data.length <=0){
+            that.data.loading = true;
+          }else{
+            that.data.loading = false;
           }
         }
-        that.setData({ classData: data, loadingHidden: false });
+        that.setData({ classData: data, loadingHidden: false,loading:that.data.loading});
         if (typeof callback === 'function') {
           callback();
         }
@@ -107,6 +112,8 @@ Page({
           callback();
         }
       }
+    },function(){
+        that.setData({loadingHidden: false});
     })
   },
   onPullDownRefresh:function(){
@@ -114,6 +121,7 @@ Page({
       Load: '加载中~~'
     })
     this.data.page = 1
+    this.data.loading = false;
     this.getClassData("refresh",function(){
       wx.stopPullDownRefresh()
     });

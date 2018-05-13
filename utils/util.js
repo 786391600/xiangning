@@ -23,7 +23,7 @@ function formatNumber(n) {
 /**
  * 发送请求
  */
-var sendAction = function (data, callback) {
+var sendAction = function (data,callback,fail) {
   checkSession(function(sessionId){
     wx.request({
       url: config.appUrl,
@@ -37,20 +37,21 @@ var sendAction = function (data, callback) {
         'content-type': 'application/json'
       },
       success: function (data) {
-        console.log(data)
-        console.log('hhhh')
         if(data.data&&data.data.success){
           callback(data);
         }else{
-          showToast('网络错误,稍后再试','error',5000);
+          if (typeof fail === 'function') {
+            fail(data)
+          }
+          showToast('网络错误','none',1000);
         }
       },
       fail: function(data){
        if(data){
-        //  callback({error:true,message:data})
-         console.log(data);
-         console.log('请求错误');
-         showToast('网络错误,稍后再试', 'error', 5000);
+         if (typeof fail === 'function'){
+           fail(data)
+         }
+         showToast('网络错误', 'none', 1000);
        }
       }
     })
@@ -213,7 +214,7 @@ var validate = function(valueArr,nameArr){
 
 var showToast=function(title, icon, time) {
   var title = title || '';
-  var icon = icon || '';
+  var icon = icon || 'none';
   var time = time || 1000;
   wx.showToast({
     title: title,

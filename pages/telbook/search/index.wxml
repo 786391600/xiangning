@@ -1,0 +1,9 @@
+<view class='phone' wx:for="{{classData}}"  data-id='{{item._id}}' catch:tap='listDataClick' data-notice='{{item.notice}}' data-details='{{item.details}}' wx-if="{{item.superId}}">
+    <view class="phone-name">
+      {{item.title}}
+      <!-- <view wx:for='{{item.notice}}' wx:for-item='notice'>{{notice.title}}</view> -->
+      <view class='vip'><image src='../../../icon/VIP.png'></image></view>
+    </view>
+    <view class="phone-content">{{item.details.Telephone}}</view>
+    <view class="phone-icon" catch:tap='dailing' data-phone='{{item.details.Telephone}}'><i class='iconfont icon-phone'></i></view>
+  </view>
