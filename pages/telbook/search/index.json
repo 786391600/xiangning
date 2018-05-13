@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "搜索商家",
+  "enablePullDownRefresh": true,
+  "backgroundColor": "#FED636",
+  "navigationBarBackgroundColor": "#FED636",
+  "navigationBarTextStyle": "white"
+}

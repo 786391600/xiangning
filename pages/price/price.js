@@ -40,10 +40,10 @@ Page({
         }else{
           that.setData({priceClassArr: data.data.priceClass,classIndex: 0, priceTime: data.data.time, priceArr: data.data.priceList, loadingHidden: false})
         }   
-      } else {
-        that.setData({loadingHidden: false })
-        until.showToast("网络错误，稍等再试","error",1000);
       }
+      wx.stopPullDownRefresh(); 
+    },function(){
+      that.setData({ loadingHidden: false })
       wx.stopPullDownRefresh(); 
     })
   },
