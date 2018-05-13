@@ -62,9 +62,15 @@ Page({
    var that=this;
    that.setData({searchStart:true})
   },
-  searchEnd:function(){
+  searchEnd:function(e){
     var that=this;
-    that.setData({searchStart:false});
+    if(e.detail.value){
+      wx.navigateTo({
+        url: '/pages/telbook/search/index?content='+e.detail.value
+      })
+    }else{
+      return
+    }
   },
   listDataClick:function(e){
     var id = e.currentTarget.dataset.id;
