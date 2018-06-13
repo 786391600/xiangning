@@ -16,7 +16,7 @@ Page({
     flexNavState: true,
     zhezhaoState:false,
     block:'none',
-    bgurl:'http://i4.bvimg.com/644269/b1373666854749d3.jpg',
+    bgurl:'',
     Sponsor: [
       { pic: 'https://files.jb51.net/image/ali_300_1.jpg', url: '/pages/telbook/index/index' },
     ]
@@ -131,13 +131,12 @@ Page({
         }
       });
     let that= this;
+    let imgSrc = 'http://i4.bvimg.com/644269/b1373666854749d3.jpg'
     wx.getImageInfo({
-      src: that.data.bgurl,
+      src: imgSrc,
       success: function (res) {
-        if (res.width == 200 && res.height == 200) {
-          that.setData({
-            bgurl: 'http://i4.bvimg.com/644269/b1373666854749d3.jpg'
-          })
+        if (res.width !== 200 || res.height !== 200) {
+          that.setData({ bgurl: imgSrc })
         }
       }
     })

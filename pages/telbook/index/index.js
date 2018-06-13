@@ -132,6 +132,7 @@ Page({
   onReachBottom: function () {
     this.data.page++;
     this.getClassData();
+    console.log(this.data.classData)
   },
   dailing: function(e) {
     var phone = e.currentTarget.dataset.phone;

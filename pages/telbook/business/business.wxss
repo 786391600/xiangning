@@ -70,6 +70,8 @@ image{
   color: #fff;
   /* background: linear-gradient(to top, #93fe9e , #00c9fd); */
   overflow: hidden;
+  background: #FF534D;
+  background-size: cover;
 }
 .gonggao-beij{
   position: absolute;

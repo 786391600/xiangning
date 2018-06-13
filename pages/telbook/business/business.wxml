@@ -3,8 +3,7 @@
 <!-- <view id="banner"><image src='../../img/456.jpg'></image></view> -->
 <view id="business-name">{{details.businessname}}</view>
 <view id="business-introduce">{{details.introduce}}</view>
-<view id="gonggaoid" bindtap='chuxian'>
-  <image class='gonggao-beij' src='{{bgurl}}'></image>
+<view id="gonggaoid" bindtap='chuxian' style='background-image:url({{bgurl}})'>
   <!-- <view class="gonggao">公 告</view> -->
   <view class="gonggao-big">店铺公告</view>
   <view class="gonggao-content">

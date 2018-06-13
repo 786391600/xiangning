@@ -235,6 +235,7 @@
   width: 100vw;
   padding-left: 20rpx;
   border-bottom: 5rpx #EFEFF4 solid;
+  box-sizing: border-box;
 }
 .swiper_item{
   font-size: 25rpx;
