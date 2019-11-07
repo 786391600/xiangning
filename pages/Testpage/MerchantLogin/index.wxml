@@ -1,0 +1,8 @@
+<!--pages/Testpage/MerchantLogin/index.wxml-->
+<view id='search'></view>
+<view id='Merchant'>
+  <view class='Merchant-Logo'>意点科技商家管理系统</view>
+  <input class='Merchant-input' placeholder='用户名'></input>
+  <input class='Merchant-input' password='true' placeholder='请输入密码'></input>
+  <button class='Merchant-button' bindtap='SignIn'>登录</button>
+</view>

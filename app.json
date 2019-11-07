@@ -1,5 +1,14 @@
 {
   "pages": [
+    "pages/Testpage/MerchantLogin/index",
+    "pages/Testpage/HomePage/index",
+    "pages/Testpage/VerificationResults/index",
+    "pages/Testpage/Userlist/index",
+    "pages/Testpage/Business/index",
+    "pages/Testpage/MerchantSystem/index",
+    "pages/Testpage/personal/index",
+    "pages/Testpage/Loading/index",
+    "pages/Testpage/QRcode/index",
     "pages/telbook/index/index",
     "pages/telbook/store/store",
     "pages/telbook/business/business",
@@ -12,7 +21,12 @@
     "pages/price/price",
     "pages/admin/telbook/index",
     "pages/admin/price/index",
-    "pages/activity/share/share"
+    "pages/activity/share/share",
+    "NewPages/Bargain/Bargain",
+    "pages/Testpage/Testpage",
+    "pages/Testpage/OrderNumber/OrderNumber",
+    "pages/Testpage/Paysuccess/Paysuccess",
+    "pages/Testpage/Activity/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -24,27 +38,22 @@
   "tabBar": {
     "list": [
       {
-        "pagePath": "pages/telbook/index/index",
-        "text": "商家录",
-        "iconPath": "icon/TelephoneBook.png",
-        "selectedIconPath": "icon/TelephoneBook-select.png"
+        "pagePath": "pages/Testpage/HomePage/index",
+        "text": "首页",
+        "iconPath": "icon/homepage.png",
+        "selectedIconPath": "icon/homepage-select.png"
       },
       {
-        "pagePath": "pages/price/price",
-        "text": "菜价",
-        "iconPath": "icon/Supermarket.png",
-        "selectedIconPath": "icon/Supermarket-select.png"
-      },
-      {
-        "pagePath": "pages/user/user",
+        "pagePath": "pages/Testpage/personal/index",
         "text": "我的",
-        "iconPath": "icon/user.png",
-        "selectedIconPath": "icon/user-select.png"
+        "iconPath": "icon/My.png",
+        "selectedIconPath": "icon/My-select.png"
       }
     ],
     "color": "#8a8a8a",
-    "selectedColor": "#FED636",
+    "selectedColor": "#ff5d4f",
     "backgroundColor": "white",
-    "borderStyle": "#bfbfbf"
-  }
+    "borderStyle": "white"
+  },
+  "sitemapLocation": "sitemap.json"
 }

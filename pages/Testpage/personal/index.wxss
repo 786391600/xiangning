@@ -1,0 +1,155 @@
+/* pages/Testpage/personal/index.wxss */
+#search {
+  width: 100%;
+  height: 104rpx;
+  background: rgb(196, 194, 194);
+  position: fixed;
+  top: 0;
+}
+#information{
+  position: fixed;
+  top: 104rpx;
+  width: 100%;
+  border-bottom: 2rpx solid #ededed;
+}
+.information-userimg{
+  width: 100rpx;
+  height: 100rpx;
+  margin: 0 auto; 
+  margin-top:36rpx;
+  border-radius: 100%;
+  overflow: hidden;
+}
+.information-userimg image{
+  width: 100%;
+  height: 100%;
+  background: #d66f5c;
+}
+.information-username{
+  margin-top: 34rpx;
+  text-align: center;
+}
+.Choice{
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  justify-content: center;
+}
+.Choice view{
+  line-height: 90rpx;
+  margin: 0 auto;
+  padding:0 25rpx;
+}
+.Choice .active{
+  border-bottom: 2rpx solid #000;
+}
+.scoll-h{
+  height: 100%;
+}
+.tab-content{
+  margin-top: 404rpx;
+  overflow: hidden;
+}
+
+.activity {
+  width: 690rpx;
+  margin: 0 auto;
+  margin-top: 29rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+  background: #fff;
+  border: 1rpx solid #eef0ed;
+  padding-bottom: 25rpx;
+}
+
+.activity-image {
+  width: 100%;
+  height: 300rpx;
+  position: relative;
+}
+.activity-image image{
+  width: 100%;
+  height: 100%;
+}
+
+.activity-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  padding: 0 22rpx;
+  margin-top: 26rpx;
+}
+
+.Sponsor{
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 20rpx 26rpx;
+  color: #fff;
+  font-size: 22rpx;
+  border-bottom-left-radius: 16rpx;
+  background-color: rgba(0, 0, 0, 0.514);
+}
+.activity-state{
+  font-size: 28rpx;
+  margin-top:15rpx; 
+  padding:0 22rpx;
+  color: #949494;
+}
+
+#OderNumber-box{
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 40rpx;
+}
+.OderNumber-box{
+  margin-bottom: 30rpx;
+  width: 100%;
+  float: left;
+}
+.OderNumber-top{
+  width: 100%;
+  float: left;
+}
+.OderNumber-left{
+  font-size: 28rpx;
+  font-weight: bold;
+  float: left;
+}
+.OderNumber-right{
+  font-size: 28rpx;
+  font-weight: bold;
+  float: right;
+}
+.OderNumber-bottom{
+  width: 100%;
+  padding-top: 40rpx;
+  padding-bottom: 50rpx;
+  float: left;
+  border-bottom: 3rpx solid #d8d8d8;
+}
+.oderBottom-left{
+  width: 30%;
+  float: left;
+}
+.oderLeft-image{
+  width: 150rpx;
+  height: 150rpx;
+  background: #d6d6d6;
+}
+.oderBottom-right{
+  width: 70%;
+  float: left;
+}
+.oderBottom-name{
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.oderBottom-content{
+  color:#8c8c8c;
+  font-size: 30rpx;
+  margin-top:20rpx; 
+}
+.OderNumber-top .active{
+  color: #23af68;
+}

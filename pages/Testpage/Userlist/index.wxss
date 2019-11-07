@@ -1,0 +1,57 @@
+/* pages/Testpage/Userlist/index.wxss */
+#search {
+  width: 100%;
+  height: 104rpx;
+  background: rgb(196, 194, 194);
+}
+.User-Statistics{
+  text-align: center;
+  font-weight: bold;
+  font-size: 32rpx;
+  margin-top: 20rpx;
+}
+.Statistics{
+  overflow: hidden;
+  font-size: 28rpx;
+  margin: 30rpx 0;
+}
+.Statistics-text1{
+  float: left;
+  margin-left: 20rpx;
+}
+.Statistics-text2{
+  float: right;
+  margin-right: 20rpx;
+}
+.list{
+  width: 640rpx;
+  overflow: hidden;
+  margin: 0 auto;
+  border-radius: 3rpx;
+  border: 1rpx solid #e6e6e6;
+}
+.list-box{
+  width: 100%;
+  height: 108rpx;
+  padding:0 110rpx;
+  overflow: hidden;
+  border-bottom: 1rpx solid #e6e6e6;
+}
+.box-image{
+  width: 64rpx;
+  height: 64rpx;
+  margin-top: 22rpx;
+  float: left;
+  border-radius: 6rpx;
+  overflow: hidden;
+}
+.box-image image{
+  width: 100%;
+  height: 100%;
+  background: #6b6b6b;  
+}
+.box-name{
+  float: left;
+  margin-left: 110rpx;
+  line-height: 108rpx;
+}

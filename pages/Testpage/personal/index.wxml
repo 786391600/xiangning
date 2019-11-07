@@ -1,0 +1,112 @@
+<!--pages/Testpage/personal/index.wxml-->
+<view id='search'></view>
+<view id='information'>
+  <view class='information-userimg'>
+    <image src='20140923094045_BNYji.thumb.700_0.png'></image>
+  </view>
+  <view class='information-username'>盛夏</view>
+  <view class='Choice'>
+    <view class="{{active==0?'active':''}}" data-active='0' bindtap='changestate'>参与的活动</view>
+    <view class="{{active==1?'active':''}}" data-active='1' bindtap='changestate'>我的订单</view>
+  </view>
+</view>
+<swiper class="tab-content" current="{{active}}" duration="300" bindchange="switchTab" style="height:{{winHeight}}rpx">
+  <swiper-item>
+    <scroll-view scroll-y="true" class="scoll-h" bindscrolltoupper="upper" bindscrolltolower="lower">
+      <view class='activity'>
+        <view class='activity-image'>
+          <image src='../HomePage/20190122154416_03.png'></image>
+          <view class='Sponsor'>意点科技赞助</view>
+        </view>
+        <view class='activity-title'>免费领取鸡排活动</view>
+        <view class='activity-state'>
+          <text style="color:{{true?'#c60813':'#3fa400'}}">进行中</text> | 已点赞9人</view>
+      </view>
+      <view class='activity'>
+        <view class='activity-image'>
+          <image src='../HomePage/20190122154416_03.png'></image>
+          <view class='Sponsor'>意点科技赞助</view>
+        </view>
+        <view class='activity-title'>免费领取鸡排活动</view>
+        <view class='activity-state'>
+          <text style="color:{{true?'#c60813':'#3fa400'}}">进行中</text> | 已点赞9人</view>
+      </view>
+      <view class='activity'>
+        <view class='activity-image'>
+          <image src='../HomePage/20190122154416_03.png'></image>
+          <view class='Sponsor'>意点科技赞助</view>
+        </view>
+        <view class='activity-title'>免费领取鸡排活动</view>
+        <view class='activity-state'>
+          <text style="color:{{true?'#c60813':'#3fa400'}}">进行中</text> | 已点赞9人</view>
+      </view>
+    </scroll-view>
+  </swiper-item>
+  <swiper-item>
+    <scroll-view scroll-y="true" class="scoll-h">
+      <view id='OderNumber-box'>
+        <view class='OderNumber-box'>
+          <view class='OderNumber-top'>
+            <view class='OderNumber-left'>订单编号 888888888888</view>
+            <view class='OderNumber-right'>已取消</view>
+          </view>
+          <view class='OderNumber-bottom'>
+            <view class='oderBottom-left'>
+              <image class='oderLeft-image'></image>
+            </view>
+            <view class='oderBottom-right'>
+              <view class='oderBottom-name'>INOHERB相宜本草</view>
+              <view class='oderBottom-content'>四倍蚕丝保湿透润面膜 五片装</view>
+            </view>
+          </view>
+        </view>
+        <view class='OderNumber-box'>
+          <view class='OderNumber-top'>
+            <view class='OderNumber-left'>订单编号 888888888888</view>
+            <view class='OderNumber-right'>已取消</view>
+          </view>
+          <view class='OderNumber-bottom'>
+            <view class='oderBottom-left'>
+              <image class='oderLeft-image'></image>
+            </view>
+            <view class='oderBottom-right'>
+              <view class='oderBottom-name'>INOHERB相宜本草</view>
+              <view class='oderBottom-content'>四倍蚕丝保湿透润面膜 五片装</view>
+            </view>
+          </view>
+        </view>
+        <view class='OderNumber-box'>
+          <view class='OderNumber-top'>
+            <view class='OderNumber-left'>订单编号 888888888888</view>
+            <view class='OderNumber-right active'>已完成</view>
+          </view>
+          <view class='OderNumber-bottom'>
+            <view class='oderBottom-left'>
+              <image class='oderLeft-image'></image>
+            </view>
+            <view class='oderBottom-right'>
+              <view class='oderBottom-name'>INOHERB相宜本草</view>
+              <view class='oderBottom-content'>四倍蚕丝保湿透润面膜 五片装</view>
+            </view>
+          </view>
+        </view>
+        <view class='OderNumber-box'>
+          <view class='OderNumber-top'>
+            <view class='OderNumber-left'>订单编号 888888888888</view>
+            <view class='OderNumber-right active'>已完成</view>
+          </view>
+          <view class='OderNumber-bottom'>
+            <view class='oderBottom-left'>
+              <image class='oderLeft-image'></image>
+            </view>
+            <view class='oderBottom-right'>
+              <view class='oderBottom-name'>INOHERB相宜本草</view>
+              <view class='oderBottom-content'>四倍蚕丝保湿透润面膜 五片装</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </swiper-item>
+</swiper>
+<Loading wx:if="{{boolea==true}}"></Loading>

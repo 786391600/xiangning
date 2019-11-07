@@ -1,0 +1,10 @@
+<!--pages/Testpage/VerificationResults/index.wxml-->
+<view class='Verification-Success'>
+  <view class='Success-box'>
+    <view class='Success'>
+      <image src="{{Verificationstate==1?'Success.png':'fail.png'}}"></image>
+    </view>
+    <view class='Success-content'>{{Verificationstate==1?'验证通过':'验证失败'}}</view>
+  </view>
+</view>
+<view class='Sure'>确定</view>

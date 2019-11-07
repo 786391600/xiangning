@@ -1,0 +1,61 @@
+<!--pages/Testpage/HomePage/index.wxml-->
+<view id='search'></view>
+<view id='header'>
+  <view class="hewder-name {{active==1?'active':''}}" data-active='1' bindtap='changestate'>活动</view>
+  <view class="hewder-name {{active==2?'active':''}}" data-active='2' bindtap='changestate'>商品</view>
+</view>
+<view wx:if="{{active==1}}" class='context'>
+  <view class='banner-time'>{{newDate}}</view>
+  <view class='Underline'></view>
+  <view class='context-banner'>
+    <view class='Recommend'>推荐福利</view>
+    <view class='banner-title'>点评10万+:吴秀波这件事,看透一个人不容易</view>
+    <view class='banner-image'>
+      <image src='647066630523155397_27.png'></image>
+    </view>
+  </view>
+  <view class='activity'>
+    <view class='activity-image'><image src='20190122154416_03.png'></image></view>
+    <view class='activity-title'>免费领取鸡排活动</view>
+  </view>
+  <view class='activity'>
+    <view class='activity-image'><image src='20190122154416_03.png'></image></view>
+    <view class='activity-title'>免费领取鸡排活动</view>
+  </view>
+  <view class='activity'>
+    <view class='activity-image'><image src='20190122154416_03.png'></image></view>
+    <view class='activity-title'>免费领取鸡排活动</view>
+  </view>
+</view>
+<view wx:if="{{active==2}}">
+  <view id='commodity'>
+    <view class='commodity-Recommend'>
+      <view class='Recommend-image'>
+        <image src='832134890315912187_06.png'></image>
+      </view>
+      <view class='Recommend-Price'>￥9.9 包邮</view>
+      <view class='Recommend-title'>INOHERB 四倍蚕丝保湿透润面膜 五片装</view>
+      <view class='Recommend-button'>抢购</view>
+    </view>
+    <view class='Singlecommodity'>
+      <view class='Singlecommodity-con'>
+        <view class='Singlecommodity-image'><image src='832134890315912187_38.png'></image></view>
+        <view class='Singlecommodity-title'>AVON 小黑裙走珠香水 9ml</view>
+        <view class='Singlecommodity-Price'>￥19.9 包邮</view>
+        <view class='Singlecommodity-button'>抢购</view>
+      </view>
+      <view class='Singlecommodity-con'>
+        <view class='Singlecommodity-image'><image src='832134890315912187_38.png'></image></view>
+        <view class='Singlecommodity-title'>AVON 小黑裙走珠香水 9ml</view>
+        <view class='Singlecommodity-Price'>￥19.9 包邮</view>
+        <view class='Singlecommodity-button'>抢购</view>
+      </view>
+      <view class='Singlecommodity-con'>
+        <view class='Singlecommodity-image'><image src='832134890315912187_38.png'></image></view>
+        <view class='Singlecommodity-title'>AVON 小黑裙走珠香水 9ml</view>
+        <view class='Singlecommodity-Price'>￥19.9 包邮</view>
+        <view class='Singlecommodity-button'>抢购</view>
+      </view>
+    </view>
+  </view>
+</view>

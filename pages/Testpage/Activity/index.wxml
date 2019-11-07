@@ -1,0 +1,45 @@
+<!--pages/Testpage/Activity/index.wxml-->
+<view id='ActivityOne' wx:if="{{ActState==1}}"> 
+  <view class='Act-image'></view>
+  <form bindsubmit='formSubmit' wx:if="{{QRState==1}}">
+    <input class='Act-Telephone' placeholder='请输入手机号' type='number' name="phone" maxlength="11" bindinput="inputPhoneNum"></input>
+    <button class="Act-Button {{ActTelephone==true?'Button-active':''}}" form-type="submit">免费领取</button>
+  </form>
+  <view class='button' wx:if="{{QRState==2}}" bindtap='toQRcode'>获取二维码领取</view>
+  <view class='address' wx:if="{{QRState==2}}">兑换地址:昌平区回龙观东大街和谐家园一区4号楼3单元101</view>
+  <button class='button' wx:if="{{QRState==2||QRState==3}}" open-type="share">分享给朋友一起领取</button>
+  <view class='button' wx:if="{{QRState==0}}">活动已结束</view>
+  <view class='Activityrules'>- 活动规则 -</view>
+  <view class='ContentRules'>规则:规则规则规则规则规则规则规则规则规则规则规则规则规则规则规则</view>
+</view>
+<view id='ActivityTow' wx:if="{{ActState==2}}">
+  <view class='Act-image'></view>
+  <view class='Fabulous' wx:if="{{QRState==1&&Someone==1}}">帮好友集赞</view>
+  <view class='Fabulous' wx:if="{{Someone==1&&(QRState==2||QRState==3)}}">已集满</view>
+  <view class='Fabulous' wx:if="{{Someone==2&&QRState==3}}">已领取</view>
+  <button class='button' wx:if="{{QRState==1}}" open-type="share">{{Someone==1?'我也要领取':'邀请好友点赞'}}</button>
+  <view class='button' wx:if="{{QRState==2}}" bindtap='toQRcode'>获取二维码领取</view>
+  <view class='address' wx:if="{{QRState==2}}">兑换地址:昌平区回龙观东大街和谐家园一区4号楼3单元101</view>
+  <view class='button' wx:if="{{QRState==0}}">活动已结束</view>
+  <view class='list'>
+    <view class='list-header'>帮助点赞的朋友</view>
+    <view class='list-footer'>
+      <view class='List-contents'>
+        <view class='contents-image'></view>
+        <view class='contents-name'>盛夏</view>
+      </view>
+    </view>
+    <view class='Statistics'>共有20位好友帮忙点赞~</view>
+  </view>
+  <view class='Activityrules'>- 活动规则 -</view>
+  <view class='ContentRules'>规则:规则规则规则规则规则规则规则规则规则规则规则规则规则规则规则</view>
+</view>
+<button bindtap="changea" data-state="ActState" data-num="1">活动1</button>
+<button bindtap="changea" data-state="ActState" data-num="2">活动2</button>
+<button bindtap="changea" data-state="Someone" data-num="1">朋友</button>
+<button bindtap="changea" data-state="Someone" data-num="2">自己</button>
+<button bindtap="changea" data-state="QRState" data-num="1">集赞中</button>
+<button bindtap="changea" data-state="QRState" data-num="2">已集满</button>
+<button bindtap="changea" data-state="QRState" data-num="3">已领取</button>
+<button bindtap="changea" data-state="QRState" data-num="0">活动已经结束</button>
+

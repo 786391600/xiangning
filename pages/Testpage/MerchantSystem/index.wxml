@@ -1,0 +1,11 @@
+<!--pages/Testpage/MerchantSystem/index.wxml-->
+<view id='Sweep-code'>
+  <view class='Sweep-box'>
+    <view class='Verification'>扫码验证</view>
+    <view class='saoyisao'>
+      <image src='saoyisao.png'></image>
+    </view>
+  </view>
+  <view class='Sweep-buttom'>点击扫码</view>
+
+</view>

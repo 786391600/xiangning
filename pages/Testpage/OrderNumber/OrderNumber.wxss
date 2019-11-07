@@ -1,0 +1,58 @@
+/* pages/Testpage/OrderNumber/OrderNumber.wxss */
+#OderNumber-box{
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 40rpx;
+}
+.OderNumber-box{
+  margin-bottom: 30rpx;
+  width: 100%;
+  float: left;
+}
+.OderNumber-top{
+  width: 100%;
+  float: left;
+}
+.OderNumber-left{
+  font-size: 28rpx;
+  font-weight: bold;
+  float: left;
+}
+.OderNumber-right{
+  font-size: 28rpx;
+  font-weight: bold;
+  float: right;
+}
+.OderNumber-bottom{
+  width: 100%;
+  padding-top: 40rpx;
+  padding-bottom: 50rpx;
+  float: left;
+  border-bottom: 3rpx solid #d8d8d8;
+}
+.oderBottom-left{
+  width: 30%;
+  float: left;
+}
+.oderLeft-image{
+  width: 150rpx;
+  height: 150rpx;
+  background: #d6d6d6;
+}
+.oderBottom-right{
+  width: 70%;
+  float: left;
+}
+.oderBottom-name{
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.oderBottom-content{
+  color:#8c8c8c;
+  font-size: 30rpx;
+  margin-top:20rpx; 
+}
+.active{
+  color: #23af68;
+}

@@ -1,0 +1,54 @@
+<!--pages/Testpage/Business/index.wxml-->
+<view id='search'></view>
+<view id='information'>
+  <view class='information-userimg'>
+    <image src='20140923094045_BNYji.thumb.700_0.png'></image>
+  </view>
+  <view class='information-username'>意点科技</view>
+  <view class='information-content'>商家简介:此商家暂无简介</view>
+</view>
+<view class='ActivityList'>
+  <view class='MyActivities'>我发布的活动</view>
+  <view class='ActivityList-box'>
+    <view class='Act-image'>
+      <image src='148168105919140814_06.png'></image>
+    </view>
+    <view class='Act-content'>
+      <view class='Act-title'>
+        <text class='ActTitle-text1'>活动测试1</text>
+        <text class='ActTitle-text2'>活动截止:2019.2.1</text>
+      </view>
+      <view class='Participant'>
+        <text class='Participant-text'>活动参与人数：100</text>
+      </view>
+    </view>
+  </view>
+  <view class='ActivityList-box'>
+    <view class='Act-image'>
+      <image src='148168105919140814_06.png'></image>
+    </view>
+    <view class='Act-content'>
+      <view class='Act-title'>
+        <text class='ActTitle-text1'>活动测试1</text>
+        <text class='ActTitle-text2'>活动截止:2019.2.1</text>
+      </view>
+      <view class='Participant'>
+        <text class='Participant-text'>活动参与人数：100</text>
+      </view>
+    </view>
+  </view>
+  <view class='ActivityList-box'>
+    <view class='Act-image'>
+      <image src='148168105919140814_06.png'></image>
+    </view>
+    <view class='Act-content'>
+      <view class='Act-title'>
+        <text class='ActTitle-text1'>活动测试1</text>
+        <text class='ActTitle-text2'>活动截止:2019.2.1</text>
+      </view>
+      <view class='Participant'>
+        <text class='Participant-text'>活动参与人数：100</text>
+      </view>
+    </view>
+  </view>
+</view>

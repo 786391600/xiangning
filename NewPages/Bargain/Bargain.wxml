@@ -1,0 +1,13 @@
+<!--NewPages/Bargain/Bargain.wxml-->
+<view id="background">
+  <view class='WhiteBox'>
+    <button bindtap='QueryData'>按钮</button>
+  </view>
+  <view class="billboard">
+    <view class="billboard-title">- 榜单 -</view>
+    <view class='billboard-frame' wx:for="{{billboardData}}">
+      <view class='billboard-num'>{{item.num}}</view>
+      <view class='billboard-name'>{{item.name}}</view>
+    </view>
+  </view>
+</view>

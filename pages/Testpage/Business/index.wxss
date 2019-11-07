@@ -1,0 +1,95 @@
+/* pages/Testpage/Business/index.wxss */
+page {
+  background-color: #f0f4f7;
+} 
+.MyActivities{
+  text-align: center;
+  margin: 20rpx 0;
+  color: #d82f1c;
+  font-weight: bolder;
+}
+#search {
+  width: 100%;
+  height: 104rpx;
+  background: rgb(196, 194, 194);
+}
+#information{
+  width: 100%;
+  border-bottom: 2rpx solid #ededed;
+  background: #ffffff;
+  overflow: hidden;
+}
+.information-userimg{
+  width: 100rpx;
+  height: 100rpx;
+  margin: 0 auto; 
+  margin-top:36rpx;
+  border-radius: 100%;
+  overflow: hidden;
+}
+.information-userimg image{
+  width: 100%;
+  height: 100%;
+  background: #d66f5c;
+}
+.information-username{
+  margin: 34rpx 0;
+  text-align: center;
+}
+.information-content{
+  text-align: center;
+  width: 600rpx;
+  margin: 0 auto;
+  font-size: 24rpx;
+  color: #515254;
+  margin-bottom: 10rpx;
+}
+.ActivityList{
+  width: 100%;
+  margin-bottom: 30rpx;
+  overflow: hidden;
+}
+.ActivityList-box{
+  width: 700rpx;
+  height: 470rpx;
+  border-radius: 10rpx;
+  background: #ffffff;
+  margin: 0 auto;
+  margin-top: 22rpx;
+  overflow: hidden;
+}
+.Act-image{
+  width: 100%;
+  height:336rpx;
+}
+.Act-image image{
+  width: 100%;
+  height: 100%;
+}
+.Act-content{
+  width: 100%;
+  height: 134rpx;
+}
+.Act-title{
+  margin:24rpx 0;
+  overflow: hidden;
+}
+.ActTitle-text1{
+  margin-left: 20rpx;
+  float: left;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+.ActTitle-text2{
+  margin-right: 20rpx;
+  float: right;
+  font-size: 28rpx;
+  color: #88888a;
+  margin-top: 4rpx;
+}
+.Participant{
+  font-size: 28rpx;
+}
+.Participant-text{
+  margin-left: 20rpx;
+}

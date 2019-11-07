@@ -1,0 +1,26 @@
+<!--pages/Testpage/Userlist/index.wxml-->
+<view id='search'></view>
+<view class='User-Statistics'>参与人员统计</view>
+<view class='Statistics'><text class='Statistics-text1'>参与总人数:100人</text><text class='Statistics-text2'>已领取：80人</text></view>
+<view class='list'>
+  <view class='list-box'>
+    <view class='box-image'><image></image></view>
+    <view class='box-name'>王晨</view>
+  </view>
+  <view class='list-box'>
+    <view class='box-image'><image></image></view>
+    <view class='box-name'>王晨</view>
+  </view>
+  <view class='list-box'>
+    <view class='box-image'><image></image></view>
+    <view class='box-name'>王晨</view>
+  </view>
+  <view class='list-box'>
+    <view class='box-image'><image></image></view>
+    <view class='box-name'>王晨</view>
+  </view>
+  <view class='list-box'>
+    <view class='box-image'><image></image></view>
+    <view class='box-name'>王晨</view>
+  </view>
+</view>

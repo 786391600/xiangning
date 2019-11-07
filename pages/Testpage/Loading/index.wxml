@@ -1,0 +1,15 @@
+<!--pages/Testpage/Loading/index.wxml-->
+<view class="tui-loading-row">
+  <view class="tui-loading-cell">
+    <view class="circle-round-fade">
+      <text></text>
+      <text></text>
+      <text></text>
+      <text></text>
+      <text></text>
+      <text></text>
+      <text></text>
+      <text></text>
+    </view>
+  </view>
+</view>

@@ -24,6 +24,13 @@ Page({
       url:'/pages/admin/'+t+'/index'
     })
   },
+  testClick: function (e) {
+    console.log(e)
+    var t = e.target.dataset.value;
+    wx.navigateTo({
+      url: '/NewPages/' + t + '/'+t
+    })
+  },
   detailsClick:function(){
     wx.navigateTo({
       url: '/pages/telbook/details/details',

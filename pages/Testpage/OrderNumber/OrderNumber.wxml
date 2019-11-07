@@ -1,0 +1,48 @@
+<!--pages/Testpage/OrderNumber/OrderNumber.wxml-->
+<view id='OderNumber-box'>
+  <view class='OderNumber-box'>
+    <view class='OderNumber-top'>
+      <view class='OderNumber-left'>订单编号 888888888888</view>
+      <view class='OderNumber-right'>已取消</view>
+    </view>
+    <view class='OderNumber-bottom'>
+      <view class='oderBottom-left'>
+        <image class='oderLeft-image'></image>
+      </view>
+      <view class='oderBottom-right'>
+        <view class='oderBottom-name'>INOHERB相宜本草</view>
+        <view class='oderBottom-content'>四倍蚕丝保湿透润面膜 五片装</view>
+      </view>
+    </view>
+  </view>
+  <view class='OderNumber-box'>
+    <view class='OderNumber-top'>
+      <view class='OderNumber-left'>订单编号 888888888888</view>
+      <view class='OderNumber-right'>已取消</view>
+    </view>
+    <view class='OderNumber-bottom'>
+      <view class='oderBottom-left'>
+        <image class='oderLeft-image'></image>
+      </view>
+      <view class='oderBottom-right'>
+        <view class='oderBottom-name'>INOHERB相宜本草</view>
+        <view class='oderBottom-content'>四倍蚕丝保湿透润面膜 五片装</view>
+      </view>
+    </view>
+  </view>
+  <view class='OderNumber-box'>
+    <view class='OderNumber-top'>
+      <view class='OderNumber-left'>订单编号 888888888888</view>
+      <view class='OderNumber-right active'>已完成</view>
+    </view>
+    <view class='OderNumber-bottom'>
+      <view class='oderBottom-left'>
+        <image class='oderLeft-image'></image>
+      </view>
+      <view class='oderBottom-right'>
+        <view class='oderBottom-name'>INOHERB相宜本草</view>
+        <view class='oderBottom-content'>四倍蚕丝保湿透润面膜 五片装</view>
+      </view>
+    </view>
+  </view>
+</view>

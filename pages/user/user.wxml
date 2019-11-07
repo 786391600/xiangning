@@ -39,6 +39,10 @@
     <view class="Me-icon Me-icon4" data-value='telbook'>!</view>
     <view class="Me-function" data-value='telbook'>商家录管理</view>
   </view>
+  <view class="Me-box" bindtap="testClick" data-value="Bargain">
+    <view class="Me-icon Me-icon1" data-value="Bargain">♥</view>
+    <view class="Me-function" data-value="Bargain">测试1页面</view>
+  </view>
  </view>
  <view id='Me-activity' bindtap='shareClick'>
   <view class='activity-box'>

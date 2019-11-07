@@ -1,0 +1,4 @@
+<!--pages/Testpage/Paysuccess/Paysuccess.wxml-->
+  <view id="success-img"></view>
+  <view id="success">支付成功</view>
+  <button id="complete" open-type="share">发给朋友一起领</button> 

@@ -1,0 +1,35 @@
+/* pages/Testpage/Paysuccess/Paysuccess.wxss */
+page{
+  width: 100%;
+  height: 100%;
+  overflow: hidden
+}
+#success-img{
+  width: 100rpx;
+  height: 100rpx;
+  background: #1aad19;
+  margin: 0 auto;
+  margin-top:50rpx; 
+  margin-bottom:30rpx; 
+}
+#success{
+  text-align: center;
+  margin-top:50rpx; 
+  font-size: 60rpx;
+}
+#complete{
+  width: 600rpx;
+  height: 90rpx;
+  background: linear-gradient(to right, #ff5d4f , #ff2022);
+  text-align: center;
+  margin: 0 auto;
+  line-height: 90rpx;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #fff;
+  margin-top: 200rpx;
+}

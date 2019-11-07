@@ -1,0 +1,127 @@
+/* pages/Testpage/Activity/index.wxss */
+.Act-image{
+  width: 100%;
+  height: 708rpx;
+  background-color: rgb(102, 102, 102)
+}
+.button{
+  width: 540rpx;
+  height: 92rpx;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 40rpx;
+  border-radius: 10rpx;
+  background: linear-gradient(to right, #ff5d4f , #ff2022);
+  color: #fff;
+  line-height: 92rpx;
+}
+.Act-Telephone{
+  width: 70%;
+  height: 100rpx;
+  border: 1rpx solid #ff5d4f;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 30rpx;
+  border-radius: 10rpx;
+}
+.Act-Button{
+  width: 70%;
+  height: 100rpx;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 30rpx;
+  border-radius: 10rpx;
+  background-color: #ddded9;
+  color: #fff;
+  line-height: 100rpx;
+}
+.Button-active{
+  background: linear-gradient(to right, #ff5d4f , #ff2022);
+}
+.Activityrules{
+  width: 100%;
+  text-align: center;
+  margin-top: 30rpx;
+}
+.ContentRules{
+  color:#5c5c5c;
+  font-size: 20rpx;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+}
+.Fabulous{
+  width: 70%;
+  height: 100rpx;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 30rpx;
+  border-radius: 10rpx;
+  background: linear-gradient(to right, #ff5d4f , #ff2022);
+  color: #fff;
+  line-height: 100rpx;
+}
+.list{
+  width: 600rpx;
+  margin: 0 auto;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+  overflow: hidden;
+  border-radius: 10rpx;
+  background: #f0f0f0
+}
+.list-header{
+  height: 100rpx;
+  line-height: 100rpx;
+  background: linear-gradient(to right, #ff5d4f , #ff2022);
+  text-align: center;
+  width: 100%;
+  color: #fff;
+}
+.list-footer{
+  width: 100%;
+  overflow-x:hidden;
+  overflow-y: auto;
+  background:linear-gradient(to right, #f9fafa , #faf9f9);
+}
+.List-contents{
+  width: 100%;
+  height: 100rpx;
+  float: left;
+  border-bottom:1rpx #ddded9 solid; 
+}
+.contents-key{
+  line-height: 100rpx;
+  margin-left: 20rpx;
+  float: left;
+}
+.contents-image{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  background: rgb(126, 213, 240);
+  margin-top:10rpx;
+  margin-left: 30rpx; 
+  float: left;
+}
+.contents-name{
+  margin-left: 50rpx;
+  float: left;
+  line-height: 100rpx;
+}
+.Statistics{
+  height: 42rpx;
+  font-size: 26rpx;
+  text-align: center;
+  background: linear-gradient(to right, #ff5d4f , #ff2022);
+  color: #fff;
+  line-height: 42rpx;
+}
+.address{
+  font-size:20rpx;
+  width: 600rpx;
+  margin: 0 auto; 
+  margin-top: 30rpx;
+  text-align: center;
+}

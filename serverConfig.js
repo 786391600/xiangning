@@ -1,5 +1,5 @@
 var config={
-  appUrl:'https://wtserver.duapp.com'
+  appUrl:'https://www.beijixiong.club/action'
 }
 
 module.exports=config;

@@ -1,5 +1,5 @@
 @import '../../utils/iconfont.wxss';
-@import "../../wxParse/wxParse.wxss";
+/* @import "../../wxParse/wxParse.wxss"; */
 .dateilsBox{
   background: #F0F0F0;
   padding: 70rpx 30rpx 0;

@@ -1,0 +1,8 @@
+<!--pages/Testpage/Testpage.wxml-->
+<view>
+  <text class='float' bindtap='toPaysuccess'>1.支付成功页面</text>
+  <text class='float' bindtap='toOrderNumber'>2.订单订单</text>
+  <text class='float' bindtap='toActivity'>3.活动页面1</text>
+  <text class='float' bindtap='toActivity'>4.首页</text>
+</view>
+

@@ -1,0 +1,30 @@
+/* pages/Testpage/VerificationResults/index.wxss */
+
+.Success {
+  width: 100rpx;
+  height: 100rpx;
+  margin: 0 auto;
+}
+
+.Success image {
+  width: 100%;
+  height: 100%;
+}
+.Success-content{
+  text-align: center;
+  margin-top:30rpx;
+}
+.Success-box{
+  margin-top: 150rpx;
+}
+.Sure{
+  margin: 0 auto;
+  margin-top: 300rpx;
+  width: 600rpx;
+  height: 90rpx;
+  background: linear-gradient(to right, #ff5d4f, #ff2022);
+  color: #fff;
+  text-align: center;
+  line-height: 90rpx;
+  border-radius: 10rpx;
+}

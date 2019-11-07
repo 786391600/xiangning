@@ -1,0 +1,61 @@
+/* pages/Testpage/QRcode/index.wxss */
+#QRcode{
+  width: 100%;
+  height: 100vh;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(#f77261, #ea5750);
+  position: relative;
+}
+.QRcode-image{
+  margin-top: 30rpx;
+  width: 400rpx;
+  height: 400rpx;
+  background: #ffffff;
+  margin:0 auto;
+  border-radius: 20rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.QRcode-image image{
+  width: 350rpx;
+  height: 350rpx;
+  background: #666
+}
+.address1{
+  font-size:35rpx;
+  width: 600rpx;
+  margin: 0 auto; 
+  margin-top: 15rpx;
+  margin-bottom: 15rpx;
+  text-align: center;
+  color: #ffffff;
+  font-weight: bold;
+}
+.address{
+  font-size:35rpx;
+  width: 600rpx;
+  margin: 0 auto; 
+  margin-top: 15rpx;
+  margin-bottom: 15rpx;
+  text-align: center;
+  color: #ffffff;
+}
+.RedeemCode{
+  font-size:50rpx;
+  width: 100%;
+  text-align: center;
+  margin-top:30rpx;
+  font-weight: bold;
+  color: rgb(62, 110, 243) 
+}
+.Technical-support{
+  color: #e2e1e1;
+  width: 600rpx;
+  position: absolute;
+  bottom: 80rpx;
+  margin: 0 auto; 
+  text-align: center;
+}

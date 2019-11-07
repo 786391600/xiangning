@@ -67,10 +67,10 @@
   </view>
 </view>
 
- <!-- <view class='Forward'>
+  <!-- <view class='Forward'>
   <button open-type='share'>转发</button> 
   <button bindtap='getQR'>获取二维码</button>
   <button bindtap='uploadImg'>上传图片</button> 
   <canvas canvas-id='myCanvas' class='{{canvasClass}}'></canvas>
-  <image src='{{imgUrl}}'></image> 
-</view>  -->
+  <image src='{{imgUrl}}'></image>  -->
+<!-- </view>   -->

@@ -1,0 +1,7 @@
+/* pages/Testpage/Testpage.wxss */
+.float{
+  width: 100%;
+  float: left;
+  text-align: center;
+  margin: 10rpx 0;
+}

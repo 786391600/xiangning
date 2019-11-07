@@ -1,0 +1,12 @@
+<!--pages/Testpage/QRcode/index.wxml-->
+<view id='QRcode'>
+  <view>
+    <view class='address'>请出示二维码商家扫码领取</view>
+    <view class='QRcode-image'>
+      <image src='timg.gif'></image>
+    </view>
+    <view class='address1'>兑换地址</view>
+    <view class='address'>回龙观东大街和谐家园1区3单元101</view>
+    <view class='Technical-support'>吕梁惠乐购技术支持</view>
+  </view>
+</view>
