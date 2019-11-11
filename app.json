@@ -1,7 +1,11 @@
 {
   "pages": [
-    "pages/Testpage/MerchantLogin/index",
+    "pages/maphandle/index",
     "pages/Testpage/HomePage/index",
+    "pages/admin/telbook/index",
+    "pages/telbook/business/business",
+    "pages/canvas/canvas",
+    "pages/Testpage/MerchantLogin/index",
     "pages/Testpage/VerificationResults/index",
     "pages/Testpage/Userlist/index",
     "pages/Testpage/Business/index",
@@ -11,15 +15,12 @@
     "pages/Testpage/QRcode/index",
     "pages/telbook/index/index",
     "pages/telbook/store/store",
-    "pages/telbook/business/business",
     "pages/telbook/details/details",
     "pages/telbook/search/index",
     "pages/user/user",
-    "pages/canvas/canvas",
     "pages/dateils/dateils",
     "pages/index/index",
     "pages/price/price",
-    "pages/admin/telbook/index",
     "pages/admin/price/index",
     "pages/activity/share/share",
     "NewPages/Bargain/Bargain",
@@ -28,11 +29,16 @@
     "pages/Testpage/Paysuccess/Paysuccess",
     "pages/Testpage/Activity/index"
   ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "white",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#FF5F0F",
+    "navigationBarTitleText": "乡宁城乡公交",
+    "navigationBarTextStyle": "white",
     "backgroundColor": "red"
   },
   "tabBar": {

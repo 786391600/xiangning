@@ -1,257 +1,222 @@
+const config = require('../serverConfig.js')
 
-var config=require('../serverConfig.js');
-
-function formatTime(date) {
-  var year = date.getFullYear()
-  var month = date.getMonth() + 1
-  var day = date.getDate()
-
-  var hour = date.getHours()
-  var minute = date.getMinutes()
-  var second = date.getSeconds()
-  return [year, month, day].map(formatNumber).join('/');
-}
-
-function formatNumber(n) {
-  n = n.toString()
-  return n[1] ? n : '0' + n
-}
-
-
-
-
-/**
- * 发送请求
- */
-var sendAction = function (data,callback,fail) {
-  checkSession(function(sessionId){
-    wx.request({
-      url: config.appUrl,
-      method: 'GET',
-      data:{
-        action:data.action,
-        data:data.data,
-        sessionId:sessionId
-      },
-      header: {
-        'content-type': 'application/json'
-      },
-      success: function (data) {
-        if(data.data&&data.data.success){
-          callback(data);
-        }else{
-          if (typeof fail === 'function') {
-            fail(data)
-          }
-          showToast('网络错误','none',1000);
+exports.login = function () {
+  return new Promise((resolve, reject) => {
+    wx.login({
+      success(res) {
+        if (res.code) {
+          exports.loginRequest({
+            action: 'login',
+            data: {
+              code: res.code
+            }
+          }).then((e) => {
+            if (e.data.sessionId) {
+              wx.setStorage({
+                key: 'sessionId',
+                data: e.data.sessionId,
+                success: function () {
+                  resolve(e.data.sessionId)
+                }, fail: function (e) {
+                  reject(e)
+                }
+              })
+            }
+          })
         }
+      }
+    })
+  })
+}
+exports.getSessionId = function (force) {
+  return new Promise((resolve, reject) => {
+    if (force) {
+      exports.login().then(function (e) {
+        resolve(e)
+      })
+    } else {
+      if (wx.getStorageSync('sessionId')) {
+        console.log('本地存在')
+        console.log(wx.getStorageSync('sessionId'))
+        resolve(wx.getStorageSync('sessionId'))
+      } else {
+        exports.login().then(function (e) {
+          console.log('本地不存在')
+          console.log(e)
+          resolve(e)
+        })
+      }
+    }
+  })
+}
+exports.request = function (data) {
+  var data = data;
+  return new Promise(function (resolve, reject) {
+    exports.getSessionId().then((sessionId) => {
+      data.sessionId = sessionId;
+      wx.request({
+        url: config.serverUrl,
+        data: data,
+        method: 'POST',
+        success: function (e) {
+          if (e.data.sessionExpire) {
+            console.log('session到期 重新请求');
+            exports.getSessionId('force').then((sessionId) => {
+              data.sessionId = sessionId;
+              wx.request({
+                url: config.serverUrl,
+                data: data,
+                method: 'POST',
+                success: function (e) {
+                  if (!e.data.success && e.data.err) {
+                    exports.showToast('服务异常', 'error')
+                  } else {
+                    resolve(e)
+                  }
+                }
+              })
+            })
+          } else {
+            console.log(e)
+            if (!e.data.success && e.data.err) {
+              exports.showToast('服务异常', 'error')
+            } else {
+              resolve(e)
+            }
+          }
+        },
+        fail: function (e) {
+          reject(e)
+        }
+      })
+    })
+  })
+}
+exports.loginRequest = function (data) {
+  return new Promise(function (resolve, reject) {
+    wx.request({
+      url: config.serverUrl,
+      data: data,
+      method: 'POST',
+      success: function (e) {
+        resolve(e)
       },
-      fail: function(data){
-       if(data){
-         if (typeof fail === 'function'){
-           fail(data)
-         }
-         showToast('网络错误', 'none', 1000);
-       }
+      fail: function (e) {
+        reject(e)
       }
     })
   })
 }
 
-/**
- * 获取login code 
- * 通过code获取到session_key openId
- * 存取redis以后返回自己服务器的sessionId
- */
-var login=function(callback){
-  try {
-    var sessionId = wx.getStorageSync('sessionId');
-    if(sessionId){
-      var lastSession = sessionId;
-    }else{
-      var lastSession=null;
-    }
-    wx.login({
-      success: function (res) {
-        if (res.code) {
-          //发起网络请求
-          wx.request({
-            url: config.appUrl,
-            data: {
-              action: "app.login",
-              data: { code: res.code, sessionId: lastSession }
-            },
-            success: function (res) {
-              console.log('重新登陆成功');
-              console.log(res);
-              wx.setStorage({
-                key: 'sessionId',
-                data: res.data.sessionId
+
+exports.pay = function (obj) {
+  return new Promise((resolve, reject) => {
+    exports.request({
+      action: 'app.until.bookingPay',
+      data: obj
+    }).then(function (e) {
+      console.log('看看是成功还是失败')
+      if (e.data && e.data.success) {
+        let out_trade_no = e.data.data.out_trade_no;
+        wx.requestPayment({
+          timeStamp: e.data.data.timeStamp,
+          nonceStr: e.data.data.nonceStr,
+          package: e.data.data.package,
+          signType: e.data.data.signType,
+          paySign: e.data.data.paySign,
+          success(res) {
+            resolve({ data: e, successData: res })
+          },
+          fail(res) {
+            let err = res || {}
+            err.out_trade_no = out_trade_no
+            reject(err)
+          }
+        })
+      } else {
+        if (e.data && e.data.data && e.data.data.notEnough) {
+          reject({ notEnough: true })
+        } else {
+          reject({ notEnough: false })
+        }
+      }
+    })
+  })
+}
+exports.confirmUser = function (obj) {
+  return new Promise((resolve, reject) => {
+    exports.request({
+      action: 'app.user.confirmUser',
+      data: obj
+    }).then(function (e) {
+      resolve(e)
+    })
+  })
+}
+exports.getUserInfo = function (query) {
+  var query = query || {}
+  exports.request({
+    action: 'app.user.getUserInfo',
+    data: query
+  }).then(function (e) {
+    console.log(e)
+  })
+}
+
+exports.setUserInfo = function (obj) {
+  return new Promise((resolve, reject) => {
+    exports.request({
+      action: 'app.user.setUserInfo',
+      data: obj
+    }).then(function (e) {
+      resolve(e)
+    })
+  })
+}
+
+exports.getUserAuth = function () {
+  return new Promise((resolve, reject) => {
+    wx.getSetting({
+      success(res) {
+        if (res.authSetting['scope.userInfo']) {
+          // 已经授权，可以直接调用 getUserInfo 获取头像昵称
+          wx.getUserInfo({
+            success(res) {
+              exports.confirmUser({ userInfo: res.userInfo }).then(function (e) {
+                wx.setStorageSync('userInfo', e.data.data)
+                resolve({ auth: true, userInfo: res })
               })
-              callback(res.data.sessionId);
             }
           })
         } else {
-          console.log('获取用户登录态失败！' + res.errMsg)
+          resolve({ auth: false })
         }
       }
-    });
-  } catch (e) {
-    console.log(e);
-  }   
-}
-
-
-
-var checkSession=function(callback){
-  wx.getStorage({
-    key: 'sessionId',
-    success: function (res) {
-      console.log("checksessionData" + res.data);
-      var sessionId = res.data;
-      // serverCheckSession(sessionId, function (data) {
-      //   console.log('serverCheckSession');
-      //   console.log(data);
-      //   callback(data);
-      // })
-      console.log('本地读取sessionId为')
-      console.log(sessionId);
-      callback(sessionId);
-    },
-    fail: function (res) {
-      console.log('checksession重新登陆')
-      login(function (sessionId) {
-        callback(sessionId);
-      });
-    }
+    })
   })
 }
-var checkSession1=function(callback){
-  /**
- * 判断微信session是否到期
- * 判断自身服务器sessionId是否到期
- * 到期重新获取sessionId
- * 没有到期获取缓存里的sessionId
- */
-  console.log('checkSession');
-  wx.checkSession({
-    success: function () {
-      wx.getStorage({
-        key: 'sessionId',
-        success: function (res) {       
-           console.log("checksessionData"+res.data);
-          var sessionId=res.data;
-            // serverCheckSession(sessionId, function (data) {
-            //   console.log('serverCheckSession');
-            //   console.log(data);
-            //   callback(data);
-            // })
-            console.log('本地读取sessionId为')
-            console.log(sessionId);
-            callback(sessionId);
-        },
-        fail:function(res){
-          console.log('checksession重新登陆')
-          login(function (sessionId) {
-            callback(sessionId);
-          }); 
-        }
-      })
-    },
-    fail: function () {
-      console.log('登陆过期')
-      //登录态过期
-     login(function(sessionId){
-      callback(sessionId);
-     }); 
-  }
-})
-}
-
-var serverCheckSession = function (sessionId, call) {
-  /**
- * 判断自己服务器的sessionId是否过期；
- * 返回可用的sessionId
- */
-  if(!sessionId){
-    login(function (sessionId) {
-      call(sessionId);
-    });
-  }else{
-  wx.request({
-    url: config.appUrl,
-    data: {
-      action: "app.checkSession",
-      data: { key: sessionId }
-    },
-    success: function (result) {
-      var checkSession = result.data.checkSession;
-      if (checkSession) {
-        call(sessionId);
-      } else {
-        login(function (sessionId) {
-          call(sessionId); 
-        });
+exports.getQrImage = function (data) {
+  return new Promise((resolve, reject) => {
+    wx.request({
+      url: config.serverUrl,
+      data: data,
+      method: 'POST',
+      success: function (e) {
+        resolve(e)
+      },
+      fail: function (e) {
+        reject(e)
       }
-    }
+    })
   })
-  }
 }
 
-var validate = function(valueArr,nameArr){
-  for (var k in valueArr) {
-    if (!valueArr[k]) {
-      wx.showToast({
-        title: nameArr[k] + '为空',
-        icon: 'waiting',
-        duration: 1000
-      })
-      return false;
-    }
-  }
-  return true;
-}
-
-var showToast=function(title, icon, time) {
-  var title = title || '';
-  var icon = icon || 'none';
-  var time = time || 1000;
+exports.showToast = function (title, type) {
+  var image = type ? '/style/image/' + type + '.png' : '';
+  console.log(image)
   wx.showToast({
     title: title,
-    icon: icon,
-    duration: time
+    image: image,
+    duration: 2000
   })
-}
-
-function getArrData(arr,type) {
-  var setArr = []
-  if(type==='string'){
-    for (let i = 0; i < arr.length; i++) {
-      setArr.push(JSON.stringify(arr[i]))
-    }
-    return JSON.stringify(setArr)
-  }else{
-    for (let i = 0; i < arr.length; i++) {
-      setArr.push(JSON.parse(arr[i]))
-    }
-    return setArr
-  }
-}
-
-/**
- * send发送请求
- * data{
- * action:action,
- * data:{
- * 
- * }
- * }
- */
-
-module.exports = {
-  formatTime: formatTime,
-  send:sendAction,
-  validate:validate,
-  showToast:showToast,
-  getArrData: getArrData
 }

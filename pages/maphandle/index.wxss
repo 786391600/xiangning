@@ -1,0 +1,82 @@
+/* pages/Testpage/MerchantLogin/index.wxss */
+@import '../../utils/iconfont.wxss';
+.refresh{
+   background: #F44200;
+   color: white;
+   margin: 0 auto 30rpx;
+}
+.carInfo{
+  position: fixed;
+  left:0;
+  right: 0;
+  bottom: 0rpx;
+  margin: 0 auto 0rpx;
+  border-radius: 10rpx;
+  width: 100%;
+  background: white;
+}
+.scrollContainer{
+  display: flex;
+  flex-direction:row;
+  justify-content: center;
+  flex-wrap: nowrap;
+  align-items: center;
+  white-space: nowrap;
+  padding: 30rpx 20rpx 30rpx;
+  box-sizing: border-box;
+  background: white;
+  border-bottom: 1rpx solid #E7E7E7;
+}
+.scrollContainer view{
+  margin: 0 10rpx 0;
+  border: 2rpx solid #FF5E0D;
+  border-radius: 10rpx;
+  padding: 30rpx;
+  box-sizing: border-box;
+  display: inline-block;
+  background: #FF5E0D;
+  color: white;
+}
+.scrollContainer view span{
+  display: block;
+}
+.scrollContainer .carSelect{
+  background: white;
+  color: #555555;
+}
+/* .scrollContainer{
+  width: 100%;
+} */
+.carButton{
+  display: flex;
+  flex-direction: row;
+  width: 720rpx;
+  margin: 0 auto;
+  text-align: center;
+  height: 95rpx;
+  color: white;
+  line-height: 95rpx;
+  font-size: 34rpx;
+  padding: 16rpx 0 16rpx;
+}
+.carButton .share{
+  width: 250rpx;
+  height: 100%;
+  background: #FDA601;
+}
+.carButton .refresh{
+  width: 470rpx;
+  background: #F26D2A;
+  height: 100%;
+}
+.recommend{
+  border-bottom: 1rpx solid #E7E7E7;
+  padding: 16rpx 20rpx 16rpx;
+  color: #555555;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.recommend-title {
+  white-space: nowrap;
+}
