@@ -42,11 +42,25 @@ Page({
     this.getCarInfo()
   },
   refresh() {
+    if (this.data.carRequest) {
+      return
+    }
+    this.data.carRequest = true
     this.getCarInfo()
   },
   getWeiXinInfo(carInfo, carIndex) {
-    console.log(carInfo, 'carInffo')
     let that = this
+    if (carIndex === 'refresh') {
+      carIndex = this.data.currentCarTab 
+    } else {
+      if (that.data.isGetWeiXinInfo || carIndex === that.data.currentCarTab) {
+        return
+      }
+    }
+    wx.showLoading({
+      title: '车辆更新中...',
+    })
+    that.data.isGetWeiXinInfo = true
     qqmapsdk.reverseGeocoder({
       sig: 'aGiWaOaTVM4hHZ4NnZW4GKBtLGQfKdSx',
       location: {
@@ -56,6 +70,7 @@ Page({
       coord_type: 1,
       success: function (res) {
         console.log(res)
+        console.log('结果=======')
         var markers = [{
           iconPath: "./aaa.png",
           id: 0,
@@ -74,7 +89,9 @@ Page({
             color: '#FFFFFF'
           }
         }]
+        wx.hideLoading()
         that.setData({ markers: markers, latitude: res.result.location.lat, longitude: res.result.location.lng, recommend: res.result.formatted_addresses.recommend, currentCarTab: carIndex, currentCarNo:  carInfo.carNo})
+        that.data.isGetWeiXinInfo = false
       }
     })
   },
@@ -93,13 +110,20 @@ Page({
         let carInfo = carList[0]
         if (this.data.currentCarNo) {
           let oldCarList = this.data.carList
-          oldCarList[this.data.currentCarTab] = carInfo
-          this.setData({ carList: oldCarList, currentCarTab: this.data.currentCarTab })
+          if (carInfo) {
+            oldCarList[this.data.currentCarTab] = carInfo
+            this.setData({ carList: oldCarList, currentCarTab: this.data.currentCarTab })
+            this.getWeiXinInfo(carInfo, 'refresh')
+          } else {
+            oldCarList[this.data.currentCarTab]['state'] = 'offLine'
+            this.setData({ carList: oldCarList, currentCarTab: this.data.currentCarTab })
+          }
         }else {
           this.setData({ carList: carList })
+          this.getWeiXinInfo(carInfo, 'refresh')
         }
-        this.getWeiXinInfo(carInfo)
       }
+      that.data.carRequest = false
     })
   },
   carClick(res) {
