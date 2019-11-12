@@ -1,0 +1,6 @@
+<view class='lineList'>
+  <view class='lineTitle'>所有线路</view>
+  <view wx:for='{{lineList}}' class='line-info' bindtap='toCarInfo' data-id='{{item.id}}' data-title='{{item.title}}'>
+     <i class='iconfont icon-car'></i>{{item.title}}
+  </view>
+</view>

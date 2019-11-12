@@ -3,6 +3,8 @@ var QQMapWX = require('../../libs/qqmap-wx-jssdk.min.js');
 var qqmapsdk;
 Page({
   data: {
+    lineTitle: '',
+    lineId: '',
     currentCarNo: '',
     currentCarTab: 0,
     recommend: '',
@@ -35,7 +37,14 @@ Page({
   controltap(e) {
     console.log(e.controlId)
   },
-  onLoad () {
+  onLoad (options) {
+    if (options) {
+      this.data.lineId = options.lineId
+      this.data.lineTitle = options.lineTitle
+      wx.setNavigationBarTitle({
+        title: options.lineTitle + '公交'
+      })
+    }
     qqmapsdk = new QQMapWX({
       key: 'QHWBZ-HC36J-OP6FG-KAWAP-AD3W6-BCBDC'
     });
@@ -69,8 +78,6 @@ Page({
       },
       coord_type: 1,
       success: function (res) {
-        console.log(res)
-        console.log('结果=======')
         var markers = [{
           iconPath: "./aaa.png",
           id: 0,
@@ -97,9 +104,13 @@ Page({
   },
   getCarInfo() {
     let query = {}
+    query.lineId = this.data.lineId
     if (this.data.currentCarNo) {
       query.CarNo = this.data.currentCarNo
     }
+    wx.showLoading({
+      title: '信息更新中...',
+    })
     let that = this;
     DS.request({
       action: "app.transit.getLocationInfo",

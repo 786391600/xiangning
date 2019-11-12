@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/carIndex/index",
     "pages/maphandle/index",
     "pages/Testpage/HomePage/index",
     "pages/admin/telbook/index",

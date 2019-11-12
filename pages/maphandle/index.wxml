@@ -9,7 +9,7 @@
         <span>{{item.carNo}}</span>
         <span wx:if='{{item.state === "offLine"}}'><i class='iconfont icon-stop'></i>车辆离线</span>
         <span wx:else>
-          <span wx:if='{{item.gpsSpeed > 0}}'><i class='iconfont icon-car'></i>行驶中</span><span wx:else><i class='iconfont icon-stop'></i>候车中</span>
+          <span wx:if='{{item.gpsSpeed > 0}}'><i class='iconfont icon-car'></i>行驶中</span><span wx:else><i class='iconfont icon-stop'></i>停车中</span>
         </span>
       </view>
   </scroll-view>
