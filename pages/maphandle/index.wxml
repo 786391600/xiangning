@@ -1,3 +1,15 @@
+<swiper class="swiper_container" vertical="true" autoplay="true" circular="true" interval="3000">
+     <block>
+        <swiper-item>
+           <view bindtap='toGGdetail' data-id="{{item.id}}"class="swiper_item">乡宁城乡公交小程序广告招商</view>
+        </swiper-item>
+     </block>
+     <block>
+        <swiper-item>
+           <view bindtap='toGGdetail' data-id="{{item.id}}"class="swiper_item">联系电话：13934691550</view>
+        </swiper-item>
+     </block>
+</swiper>
 <map id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="14" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location style="width: 100%; height: 90vh" include-points='{{include-points}}' enable-traffic='true' enable-zoom='{{true}}' enable-scroll='{{true}}' scale='{{16}}'></map>
 <view class='carInfo'>
   <view class="recommend">
@@ -6,11 +18,11 @@
   </view>
   <scroll-view scroll-x class='scrollContainer'>
       <view wx:for='{{carList}}' bindtap="carClick" data-carIndex='{{index}}' data-carInfo="{{item}}" class = "{{currentCarTab === index ? '':'carSelect'}}">
-        <span>{{item.carNo}}</span>
         <span wx:if='{{item.state === "offLine"}}'><i class='iconfont icon-stop'></i>车辆离线</span>
         <span wx:else>
-          <span wx:if='{{item.gpsSpeed > 0}}'><i class='iconfont icon-car'></i>行驶中</span><span wx:else><i class='iconfont icon-stop'></i>停车中</span>
+          <span wx:if='{{item.gpsSpeed > 0}}'><i class='iconfont icon-car'></i>在线行驶</span><span wx:else><i class='iconfont icon-stop'></i>在线停车</span>
         </span>
+        <span>{{item.carNo}}</span>
       </view>
   </scroll-view>
   <view class="carButton">

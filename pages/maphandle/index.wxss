@@ -83,3 +83,25 @@
 .recommend-title {
   white-space: nowrap;
 }
+
+.swiper_container {
+  height: 40rpx;
+  width: 60%;
+  position: fixed;
+  top: 30rpx;
+  z-index: 100;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background: rgba(255, 95, 15, 0.5);
+  padding: 10rpx;
+  color: white;
+  border-radius: 10rpx;
+  text-align: center;
+}
+.swiper_item {
+  font-size: 26rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
