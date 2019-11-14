@@ -141,5 +141,14 @@ Page({
     let carInfo = res.currentTarget.dataset.carinfo;
     let carIndex = res.currentTarget.dataset.carindex || 0;
     this.getWeiXinInfo(carInfo, carIndex)
+  },
+  onShareAppMessage: function (res) {
+    if (res.from === 'button') {
+
+    }
+    return {
+      title: '乡宁'+ this.data.lineTitle + '公交实时查看',
+      path: '/pages/maphandle/index?lineId=' + this.data.lineId + '&lineTitle=' + this.data.lineTitle
+    }
   }
 })

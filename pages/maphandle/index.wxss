@@ -63,6 +63,10 @@
   width: 250rpx;
   height: 100%;
   background: #FDA601;
+  border: 0;
+  padding: 0;
+  text-align: center;
+  color: white;
 }
 .carButton .refresh{
   width: 470rpx;
@@ -104,4 +108,12 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+button::after {
+  border: none;
+}
+button {
+  border-radius:0;
+  font-size: 34rpx;
 }

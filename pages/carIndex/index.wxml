@@ -1,6 +1,15 @@
+<image src="./banner.png" mode="widthFix" class="banner"></image>
+<view class='lineList' wx:if='{{commonlyLine.id}}'>
+  <view class='lineTitle'>最近查看</view>
+  <view  class='line-info' bindtap='toCarInfo' data-id='{{commonlyLine.id}}' data-title='{{commonlyLine.title}}'>
+     <!-- <i class='iconfont icon-car'></i>{{item.title}} -->
+     {{commonlyLine.title}}
+  </view>
+</view>
 <view class='lineList'>
   <view class='lineTitle'>所有线路</view>
   <view wx:for='{{lineList}}' class='line-info' bindtap='toCarInfo' data-id='{{item.id}}' data-title='{{item.title}}'>
-     <i class='iconfont icon-car'></i>{{item.title}}
+     <!-- <i class='iconfont icon-car'></i>{{item.title}} -->
+     {{item.title}}
   </view>
 </view>

@@ -26,9 +26,9 @@
       </view>
   </scroll-view>
   <view class="carButton">
-    <view class="share">
+    <button class="share" open-type="share">
       分享
-    </view>
+    </button>
     <view bindtap="refresh" class="refresh">
       刷新
     </view>

@@ -1,6 +1,7 @@
 var DS = require('../../utils/util.js')
 Page({
   data: {
+    commonlyLine: {},
     lineList: [
       {
         title: '西坡',
@@ -44,13 +45,20 @@ Page({
       }
     ]
   },
-  onLoad () {
-    
+  onShow () {
+    let that = this
+    let res = wx.getStorageSync('commonlyLine')
+    console.log(res)
+    if (res) {
+      that.setData({ commonlyLine: JSON.parse(res) })
+    }
   },
   toCarInfo (res) {
     let data = res.currentTarget.dataset
     wx.navigateTo({
       url: '/pages/maphandle/index?lineId='+ data.id + '&lineTitle=' + data.title
     })
+    let commonlyObj = { id: data.id, title: data.title }
+    wx.setStorageSync('commonlyLine', JSON.stringify(commonlyObj))
   }
 })
