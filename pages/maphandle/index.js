@@ -49,6 +49,10 @@ Page({
       key: 'QHWBZ-HC36J-OP6FG-KAWAP-AD3W6-BCBDC'
     });
     this.getCarInfo()
+    let phone = wx.getStorageSync('phone')
+    if (phone) {
+      this.setData({havePhone: true})
+    }
   },
   refresh() {
     if (this.data.carRequest) {
@@ -56,6 +60,24 @@ Page({
     }
     this.data.carRequest = true
     this.getCarInfo()
+  },
+  getPhoneNumber (data) {
+    var that = this;
+    if (!data.detail.encryptedData || !data.detail.iv) {
+      return
+    }
+    DS.request({
+      action: 'app.transit.getPhoneNumber',
+      data: data.detail
+    }, 'force').then(function (e) {
+      if (e.data.success) {
+        let phone = e.data.data.phoneNumber
+        if (phone) {
+          wx.setStorageSync('phone', phone)
+          that.setData({havePhone: true})
+        }
+      }
+    })
   },
   getWeiXinInfo(carInfo, carIndex) {
     let that = this
@@ -148,7 +170,13 @@ Page({
     }
     return {
       title: '乡宁'+ this.data.lineTitle + '公交实时查看',
-      path: '/pages/maphandle/index?lineId=' + this.data.lineId + '&lineTitle=' + this.data.lineTitle
+      path: '/pages/maphandle/index?lineId=' + this.data.lineId + '&lineTitle=' + this.data.lineTitle,
+      imageUrl: '../../icon/share.png'
     }
+  },
+  toLineInfo () {
+    wx.reLaunch({
+      url: '/pages/carIndex/index'
+    })
   }
 })

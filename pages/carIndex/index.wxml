@@ -13,3 +13,9 @@
      {{item.title}}
   </view>
 </view>
+<view class='lineList' wx:if='{{commonlyLine.id}}'>
+  <view class='lineTitle'>招商电话</view>
+  <view  class='line-info' bindtap="telNumber">
+     13934691550
+  </view>
+</view>

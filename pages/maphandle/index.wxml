@@ -12,6 +12,10 @@
 </swiper>
 <map id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="14" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location style="width: 100%; height: 90vh" include-points='{{include-points}}' enable-traffic='true' enable-zoom='{{true}}' enable-scroll='{{true}}' scale='{{16}}'></map>
 <view class='carInfo'>
+  <view class="more" bindtap='toLineInfo'>
+    <span>所有</span>
+    <span>线路</span>
+  </view>
   <view class="recommend">
     <span class='recommend-title'>当前位置：</span>
     <span>{{recommend}}</span>
@@ -29,8 +33,11 @@
     <button class="share" open-type="share">
       分享
     </button>
-    <view bindtap="refresh" class="refresh">
+    <button bindtap="refresh" class="refresh" wx:if='{{havePhone}}'>
       刷新
-    </view>
+    </button>
+    <button bindtap="refresh" class="refresh" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" wx:else>
+      刷新
+    </button>
   </view>
 </view>

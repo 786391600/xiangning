@@ -117,3 +117,18 @@ button {
   border-radius:0;
   font-size: 34rpx;
 }
+.carInfo .more{
+  position: absolute;
+  width: 100rpx;
+  height: 100rpx;
+  background: #F26D2A;
+  top: -120rpx;
+  color: white;
+  border-radius: 25rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  left: 10rpx;
+  flex-direction: column;
+}

@@ -60,5 +60,10 @@ Page({
     })
     let commonlyObj = { id: data.id, title: data.title }
     wx.setStorageSync('commonlyLine', JSON.stringify(commonlyObj))
+  },
+  telNumber () {
+    wx.makePhoneCall({
+      phoneNumber: '13934691550',
+    })
   }
 })

@@ -40,7 +40,7 @@
     "navigationBarBackgroundColor": "#FF5F0F",
     "navigationBarTitleText": "乡宁城乡公交",
     "navigationBarTextStyle": "white",
-    "backgroundColor": "red"
+    "backgroundColor": "white"
   },
   "tabBar": {
     "list": [
