@@ -1,0 +1,38 @@
+/* pages/Testpage/MerchantLogin/index.wxss */
+@import '../../utils/iconfont.wxss';
+page{
+  background: #ECECEC;
+}
+.banner {
+  width: 100%;
+}
+.lineList{
+  padding: 42rpx 58rpx 42rpx;
+  background: white;
+  width: 90%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  margin-bottom: 20rpx;
+}
+.lineTitle{
+  border-left: 4rpx solid #FF5E0D;
+  font-size: 38rpx;
+  font-weight: bold;
+  padding-left: 10rpx;
+  box-sizing: border-box;
+}
+.line-info{
+  border: 2rpx solid #FF5E0D;
+  margin-top: 30rpx;
+  border-radius: 15rpx;
+  font-size: 36rpx;
+  text-align: center;
+  padding: 25rpx 0 25rpx;
+}
+.Commonly{
+  padding: 42rpx 58rpx 42rpx;
+  background: white;
+  width: 90%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}

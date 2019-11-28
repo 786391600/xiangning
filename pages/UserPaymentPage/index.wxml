@@ -1,0 +1,3 @@
+<button>确认支付</button>
+<button bindtap="getQrImage">生成图片</button>
+<canvas canvas-id="shareCanvas" style='width:500px;height:800px;' class='can'></canvas>
