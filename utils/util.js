@@ -112,11 +112,12 @@ exports.loginRequest = function (data) {
 exports.pay = function (obj) {
   return new Promise((resolve, reject) => {
     exports.request({
-      action: 'app.until.bookingPay',
+      action: 'app.until.payLogisticsOrder',
       data: obj
     }).then(function (e) {
       console.log('看看是成功还是失败')
       if (e.data && e.data.success) {
+        console.log(e, 'uuu')
         let out_trade_no = e.data.data.out_trade_no;
         wx.requestPayment({
           timeStamp: e.data.data.timeStamp,

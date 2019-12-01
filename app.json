@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/bleConnect/bleConnect",
+    "pages/sendCommand/sendCommand",
     "pages/UserPaymentPage/index",
     "pages/carIndex/index",
     "pages/maphandle/index",

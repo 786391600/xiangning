@@ -1,32 +1,38 @@
 //app.js
-var DS=require('./utils/util.js');
 App({
-  onLaunch: function (e) {
-    //调用API从本地缓存中获取数据
-   var that=this;
-   that.getUserInfo();
+  onLaunch: function () {
+    this.globalData.sysinfo = wx.getSystemInfoSync()
   },
-  getUserInfo:function(cb){
-    var that=this;
-    //验证用户是否注册过
-    wx.getUserInfo({
-      success:function(e){
-        // DS.request({
-        //   action: "app.user.validateUser",
-        //   data:e.userInfo
-        // },function(re){
-        //   if(re.data.success){
-        //     that.globalData.userInfo=e.userInfo;
-        //   }else{
-        //     console.log(re)
-        //     console.log('app.js 验证用户注册失败')
-        //   }
-        // })
-      }
-    })     
+  getModel: function () { //获取手机型号
+    return this.globalData.sysinfo["model"]
   },
-  globalData:{
-    userInfo:null,
-    runData:null
+  getVersion: function () { //获取微信版本号
+    return this.globalData.sysinfo["version"]
+  },
+  getSystem: function () { //获取操作系统版本
+    return this.globalData.sysinfo["system"]
+  },
+  getPlatform: function () { //获取客户端平台
+    return this.globalData.sysinfo["platform"]
+  },
+  getSDKVersion: function () { //获取客户端基础库版本
+    return this.globalData.sysinfo["SDKVersion"]
+  },
+  globalData: {
+    userInfo: null,
+    platform: "",
+    screenWidth: wx.getSystemInfoSync().screenWidth,
+    screenHeight: wx.getSystemInfoSync().screenHeight,
+  },
+  BLEInformation: {
+    platform: "",
+    deviceId: "",
+    writeCharaterId: "",
+    writeServiceId: "",
+    notifyCharaterId: "",
+    notifyServiceId: "",
+    readCharaterId: "",
+    readServiceId: "",
   }
+
 })

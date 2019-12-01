@@ -3,8 +3,14 @@ Page({
   data: {
     
   },
-  onShow () {
-    
+  onLoad (options) {
+    if (options.q) {
+      let q = decodeURIComponent(options.q)
+      let qrId = this.queryUrl(q, 's')
+
+    } else {
+      console.log('无效二维码')
+    }
   },
   getQrImage () {
     return new Promise((resolve, reject) => {
@@ -34,7 +40,7 @@ Page({
                   console.log(e)
                   console.log('getImageInfo')
                   const context = wx.createCanvasContext('shareCanvas')
-                  context.drawImage(e.path, 0, 0, 100, 100)
+                  context.drawImage(e.path, 0, 0, 200, 200)
                   context.setTextAlign('center')    // 文字居中
                   context.setFillStyle('#000000')  // 文字颜色：黑色
                   context.setFontSize(22)         // 文字字号：22px
@@ -49,9 +55,38 @@ Page({
           });
           resolve(e)
         } else {
-          until.showToast(e.data.message, 'error');
+          DS.showToast(e.data.message, 'error');
         }
       })
     })
+  },
+  payClick () {
+    wx.requestSubscribeMessage({
+      tmplIds: ['GG8Ww1XQ4D_Ok2B-gNhdsUfsrJvee40hvPJWna9KZus'],
+      success(res) {
+        console.log(res)
+      }
+    })
+
+    DS.pay({
+      body: '城乡物流订单',
+      fee: '0.01',
+      type: 'logisticsOrder'
+    }).then((res) => {
+      wx.hideLoading()
+      console.log('zhifuchengg :', res)
+    }).catch((res) => {
+      wx.hideLoading()
+      
+    })
+  },
+  queryUrl (url, name) {
+    var reg = new RegExp('(^|&|/?)' + name + '=([^&|/?]*)(&|/?|$)', 'i')
+    var r = url.substr(1).match(reg)
+    console.log(r)
+    if (r != null) {
+      return r[2]
+    }
+    return null;
   }
 })
