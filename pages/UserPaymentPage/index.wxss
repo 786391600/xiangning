@@ -36,3 +36,42 @@ page{
   margin: 0 auto;
   box-sizing: border-box;
 }
+
+.subBox{
+  width: 694rpx;
+  height: 89rpx;
+  line-height: 89rpx;
+  text-align: center;
+  color: #ffffff;
+  background: #FF5F0F;
+  border-radius: 89rpx;
+  margin-top:200rpx;
+}
+.informationBox{
+  background: #ffffff;
+  padding: 20rpx 0;
+  margin-top:50rpx; 
+}
+.information_title{
+  font-size: 38rpx;
+  font-weight: bold;
+  margin-left: 23rpx;
+  border-left: 2rpx solid #FF5F0F;
+  padding: 0 14rpx;
+}
+.information_content{
+  display: flex;
+  font-size: 32rpx;
+  padding: 0 26rpx;
+  margin: 25rpx 0;
+  color: #565656;
+}
+.information_content .title{
+  width: 20%;
+}
+.information_content .content{
+  width: 80%;
+}
+.Price{
+  color: #FF5F0F;
+}

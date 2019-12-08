@@ -1,0 +1,24 @@
+/* pages/paySuccess/index.wxss */
+.subBox{
+  width: 694rpx;
+  height: 89rpx;
+  line-height: 89rpx;
+  text-align: center;
+  color: #ffffff;
+  background: #FF5F0F;
+  border-radius: 89rpx;
+  margin-top:100rpx;
+}
+.Img{
+  width: 100rpx;
+  height: 100rpx;
+  background: #FF5F0F;
+  margin: 0 auto;
+  margin-top: 150rpx;
+}
+.content{
+  text-align: center;
+  margin-top:20rpx; 
+  color: #565656;
+  font-size: 36rpx;
+}

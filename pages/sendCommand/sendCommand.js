@@ -17,6 +17,32 @@ Page({
    * 页面的初始数据
    */
   data: {
+    CityArray: ['西坡', '谭平', '枣岭', '师家滩'],
+    QRData: {
+      Address: "",
+      Iphone: "",
+    },
+    DeliveryTypeItems: [{
+      value: 0,
+      name: '快递件',
+      checked: 'true'
+    }, {
+      value: 1,
+      name: '物流件'
+    }],
+    weightItems: [{
+        value: '5kg',
+        checked: 'true'
+      },
+      {
+        value: '10kg'
+      },
+      {
+        value: '15kg'
+      },
+    ],
+    CityIndex: 0,
+    DeliveryType: 0,
     sendContent: "",
     looptime: 0,
     currentTime: 1,
@@ -58,6 +84,91 @@ Page({
         console.log(e)
       }
     })
+  },
+  ChangeDeliveryType: function(e) {
+    console.log('ChangeDeliveryType携带数据为：', e.detail.value)
+    this.setData({
+      DeliveryType: e.detail.value
+    })
+  },
+  ResetForm: function() {
+    this.setData({
+      DeliveryType: 0,
+      CityIndex: 0,
+      QRData: {
+        Address: "",
+        Iphone: "",
+      },
+      DeliveryTypeItems: [{
+        value: 0,
+        name: '快递件',
+        checked: 'true'
+      }, {
+        value: 1,
+        name: '物流件'
+      }],
+      weightItems: [{
+          value: '5kg',
+          checked: 'true'
+        },
+        {
+          value: '10kg'
+        },
+        {
+          value: '15kg'
+        },
+      ],
+    })
+  },
+  bindPickerChange: function(e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      CityIndex: e.detail.value
+    })
+  },
+
+  formSubmit: function(e) {
+    var that=this;
+    console.log('form发生了submit事件，携带数据为：', e.detail.value)
+    if (this.Verification(e)) {
+      return
+    }
+    wx.showModal({
+      title: '提示',
+      content: '生成二维码成功',
+      confirmText: '重新生成',
+      cancelText: '继续生成',
+      success(res) {
+        if (res.confirm) {
+          console.log('用户点击重新生成')
+        } else if (res.cancel) {
+          console.log('用户点击继续生成')
+          that.ResetForm()
+        }
+      }
+    })
+    // this.getQrId();
+  },
+  Verification(e) {
+    var res = e.detail.value;
+    if (!res.City || !res.GoodsType || !res.Iphone || !res.weight) {
+      wx.showToast({
+        title: '请填写必填项',
+        icon: 'none',
+        duration: 1500
+      })
+      return true
+    }
+    if (res.GoodsType == 1 && !res.Address) {
+      wx.showToast({
+        title: '请填写必填项',
+        icon: 'none',
+        duration: 1500
+      })
+      return true
+    }
+    console.log(res, "res")
+    return false
   },
 
   inputEvent: function(e) { //获取输入内容
@@ -403,17 +514,30 @@ Page({
       DS.request({
         action: 'app.transit.getQrId',
         data: {}
-      }).then(function (e) {
+      }).then(function(e) {
         if (e.data.success) {
           let qrId = e.data.data
-          that.printerQr(qrId)  
+          that.printerQr(qrId)
+          wx.showModal({
+            title: '提示',
+            content: '生成二维码成功',
+            confirmText: '重新生成',
+            cancelText: '继续生成',
+            success(res) {
+              if (res.confirm) {
+                console.log('用户点击重新生成')
+              } else if (res.cancel) {
+                console.log('用户点击继续生成')
+              }
+            }
+          })
         } else {
           DS.showToast(e.data.message, 'error');
         }
       })
     })
   },
-  printerQr(qrId){
+  printerQr(qrId) {
     var that = this;
     var canvasWidth = that.data.canvasWidth
     var canvasHeight = that.data.canvasHeight
@@ -421,7 +545,7 @@ Page({
     command.setSize(40, 30)
     command.setGap(2)
     command.setCls()
-    command.setQR(80, 16, "L", 5, "A", "http://www.beijixiong.club/qr/?s="+qrId)
+    command.setQR(80, 16, "L", 5, "A", "http://www.beijixiong.club/qr/?s=" + qrId)
     command.setText(112, 176, "TSS24.BF2", 1, 1, "扫码取件")
     command.setText(64, 206, "TSS24.BF2", 1, 1, qrId)
     command.setPagePrint()

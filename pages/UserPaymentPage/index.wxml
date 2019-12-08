@@ -1,1 +1,20 @@
-<button bindtap='payClick'>支付取件</button>
+<view class="informationBox">
+  <view class="information_title">订单信息</view>
+  <view class="information_content">
+    <view class="title">手机号:</view>
+    <view class="content">18834418175</view>
+  </view>
+  <view class="information_content">
+    <view class="title">订单号:</view>
+    <view class="content">87987345327</view>
+  </view>
+  <view class="information_content">
+    <view class="title">重量:</view>
+    <view class="content">1kg</view>
+  </view>
+  <view class="information_content">
+    <view class="title">价格:</view>
+    <view class="content Price">￥5</view>
+  </view>
+</view>
+<button class="subBox" bindtap='payClick'>支付取件</button>

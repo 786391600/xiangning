@@ -1,0 +1,5 @@
+<!--pages/paySuccess/index.wxml-->
+<view class="Img"></view>
+<view class="content">支付成功</view>
+<view class="content">订单编号:71023719826</view>
+<button class="subBox" bindtap='payClick'>返回首页</button>

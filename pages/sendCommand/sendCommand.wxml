@@ -1,31 +1,50 @@
 <!--blecontrol.wxml-->
-<view class="body">
-
-    <view>
-    <textarea class="result">{{returnResult}}</textarea>
-  </view> 
-  <textarea class="input" bindinput="inputEvent" />
-  <button type="primary" bindtap="sendData">发送(票据可使用)</button> 
-
-  <view style='margin-top:4%;display: flex;flex-direction: row;'>
-
-  <button type='primary' bindtap='receiptTest' loading='{{isReceiptSend}}' disabled='{{isReceiptSend}}'>票据测试</button>
-  
-   <button type='primary' bindtap='labelTest' loading='{{isLabelSend}}' disabled='{{isLabelSend}}'>标签测试</button>
-  
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <view class="Form_box">
+    <view class="section">
+      <view class="section__titlebox">
+        <view class="MustFill">*</view>
+        <view class="section__title">发货类型:</view>
+      </view>
+      <radio-group class="radio_box" name="GoodsType" bindchange="ChangeDeliveryType">
+        <label wx:for-items="{{DeliveryTypeItems}}" wx:key="value">
+          <radio color="#FF5F0F" value="{{item.value}}" checked="{{item.checked}}" />{{item.name}}</label>
+      </radio-group>
+    </view>
+    <view class="section">
+      <view class="section__titlebox">
+        <view class="MustFill">*</view>
+        <view class="section__title">收货地点:</view>
+      </view>
+      <picker bindchange="bindPickerChange" value="{{CityIndex}}" range="{{CityArray}}">
+        <input class="section__input" value="{{CityArray[CityIndex]}}" name="City" placeholder="请选择" disabled="true" />
+      </picker>
+    </view>
+    <view class="section" wx:if="{{DeliveryType==1}}">
+      <view class="section__titlebox">
+        <view class="MustFill">*</view>
+        <view class="section__title">详细地址:</view>
+      </view>
+      <input class="section__input" name="Address" value="{{QRData.Address}}" placeholder="请填写详细地址" />
+    </view>
+    <view class="section">
+      <view class="section__titlebox">
+        <view class="MustFill">*</view>
+        <view class="section__title">手机号:</view>
+      </view>
+      <input class="section__input" type="number" name="Iphone" value="{{QRData.Iphone}}" placeholder="请填写手机号" />
+    </view>
+    <view class="section">
+      <view class="section__titlebox">
+        <view class="MustFill">*</view>
+        <view class="section__title">重量:</view>
+      </view>
+      <radio-group class="radio_box" name="weight" value="{{QRData.weight}}">
+        <label wx:for-items="{{weightItems}}" wx:key="value">
+          <radio color="#FF5F0F" value="{{item.value}}" checked="{{item.checked}}" />{{item.value}}</label>
+      </radio-group>
+    </view>
   </view>
-
-  <!-- <button style='margin-top:4%' type='primary' bindtap='queryStatus'>查询打印机状态</button> -->
-
-  <view style='margin-top:4%;display: flex;flex-direction: row;'>
-    <canvas hidden='true' canvas-id='edit_area_canvas' style='width:{{canvasWidth}}px;height:{{canvasHeight}}px'></canvas>
-  </view>
-
-
-  <picker style='margin:20px' mode='selector' range='{{buffSize}}' value='{{buffIndex}}' bindchange='buffBindChange'>当前每次发送字节数为(点击可更换)：{{buffSize[buffIndex]}}</picker>
-
-<picker style='margin:20px' mode='selector' range='{{printNum}}' value='{{printNumIndex}}' bindchange='printNumBindChange'>当前打印份数(点击可更换)：{{printNum[printNumIndex]}}</picker>
-
-</view>
-
-<button bindtap="getQrId">生成二维码</button>
+  <button class="subBox" formType="submit">生成二维码</button>
+</form>
+<!-- <button bindtap="getQrId">生成二维码</button> -->
