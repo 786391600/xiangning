@@ -1,13 +1,15 @@
 var DS = require('../../utils/util.js')
 Page({
   data: {
-    
+     id: '',
+     phone: '',
+     price: ''
   },
   onLoad (options) {
     if (options.q) {
       let q = decodeURIComponent(options.q)
       let qrId = this.queryUrl(q, 's')
-
+      this.getWayBillInfo(qrId)
     } else {
       console.log('无效二维码')
     }
@@ -61,17 +63,18 @@ Page({
     })
   },
   payClick () {
+    let that = this
     wx.requestSubscribeMessage({
       tmplIds: ['GG8Ww1XQ4D_Ok2B-gNhdsUfsrJvee40hvPJWna9KZus'],
       success(res) {
         console.log(res)
       }
     })
-
-    DS.pay({
+    DS.payLogistics({
       body: '城乡物流订单',
       fee: '0.01',
-      type: 'logisticsOrder'
+      type: 'logisticsOrder',
+      logisticsId: that.data.id
     }).then((res) => {
       wx.hideLoading()
       console.log('zhifuchengg :', res)
@@ -88,5 +91,19 @@ Page({
       return r[2]
     }
     return null;
+  },
+  getWayBillInfo (id) {
+    let query = {}
+    let that = this
+    query.id = id
+    DS.request({
+      action: 'app.transit.getWayBillInfo',
+      data: query
+    }).then(function (e) {
+       let data = e.data.data
+       data.price = data.price || 5
+       console.log(data)
+       that.setData(data)
+    })
   }
 })

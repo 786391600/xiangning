@@ -1,9 +1,9 @@
 {
   "pages": [
+    "pages/paySuccess/index",
     "pages/sendCommand/sendCommand",
     "pages/UserPaymentPage/index",
     "pages/bleConnect/bleConnect",
-    "pages/paySuccess/index",
     "pages/carIndex/index",
     "pages/maphandle/index",
     "pages/Testpage/HomePage/index",
