@@ -133,21 +133,22 @@ Page({
     if (this.Verification(e)) {
       return
     }
-    wx.showModal({
-      title: '提示',
-      content: '生成二维码成功',
-      confirmText: '重新生成',
-      cancelText: '继续生成',
-      success(res) {
-        if (res.confirm) {
-          console.log('用户点击重新生成')
-        } else if (res.cancel) {
-          console.log('用户点击继续生成')
-          that.ResetForm()
-        }
-      }
-    })
-    // this.getQrId();
+    let query = e.detail.value
+    this.getQrId(query)
+    // wx.showModal({
+    //   title: '提示',
+    //   content: '生成二维码成功',
+    //   confirmText: '重新生成',
+    //   cancelText: '继续生成',
+    //   success(res) {
+    //     if (res.confirm) {
+    //       console.log('用户点击重新生成')
+    //     } else if (res.cancel) {
+    //       console.log('用户点击继续生成')
+    //       that.ResetForm()
+    //     }
+    //   }
+    // })
   },
   Verification(e) {
     var res = e.detail.value;
@@ -508,12 +509,17 @@ Page({
   onShareAppMessage: function() {
 
   },
-  getQrId() {
+  getQrId(data) {
     let that = this;
+    let query = {}
+    query.logisticsType = data.GoodsType
+    query.end = data.City
+    query.phone = data.Iphone
+    query.price = 0.01
     return new Promise((resolve, reject) => {
       DS.request({
         action: 'app.transit.getQrId',
-        data: {}
+        data: query
       }).then(function(e) {
         if (e.data.success) {
           let qrId = e.data.data
@@ -526,6 +532,7 @@ Page({
             success(res) {
               if (res.confirm) {
                 console.log('用户点击重新生成')
+                that.printerQr(qrId)
               } else if (res.cancel) {
                 console.log('用户点击继续生成')
               }

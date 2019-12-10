@@ -70,14 +70,19 @@ Page({
         console.log(res)
       }
     })
+    let body = ''
+    if (that.data.end) {
+      body = '城乡物流订单-' + that.data.end
+    } else {
+      body = '城乡物流订单'
+    }
     DS.payLogistics({
-      body: '城乡物流订单',
-      fee: '0.01',
+      body: body,
+      fee: that.data.price,
       type: 'logisticsOrder',
       logisticsId: that.data.id
     }).then((res) => {
       wx.hideLoading()
-      console.log('zhifuchengg :', res)
     }).catch((res) => {
       wx.hideLoading()
       
