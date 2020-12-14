@@ -1,0 +1,21 @@
+    
+
+  <view class="section">
+    <view class="section__title">姓名</view>
+    <input name="input" placeholder="请输入姓名" />
+  </view>
+  <view class="section">
+    <view class="section__title">身份证</view>
+    <input name="input" placeholder="请输入身份证" />
+  </view>
+  <view class="btn-area">
+    <button bindtap="refresh" class="refresh" wx:if='{{havePhone}}'>
+      查询
+    </button>
+    <button bindtap="refresh" class="refresh" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" wx:else>
+      查询
+    </button>
+  </view>
+  <view>
+    <view>查询结果</view>
+  </view>

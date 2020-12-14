@@ -1,0 +1,17 @@
+/* pages/Testpage/MerchantLogin/index.wxss */
+@import '../../utils/iconfont.wxss';
+.refresh{
+   background: #F44200;
+   color: white;
+   margin: 30rpx auto 30rpx;
+   width: 80%;
+}
+.section{
+  display: flex;
+  flex-direction: row;
+  padding: 20rpx 0 20rpx;
+}
+.section__title{
+  padding: 0 40rpx 0;
+  width: 20%;
+}

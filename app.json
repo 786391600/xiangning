@@ -1,11 +1,12 @@
 {
   "pages": [
-    "pages/sendCommand/sendCommand",
-    "pages/bleConnect/bleConnect",
-    "pages/paySuccess/index",
-    "pages/UserPaymentPage/index",
+    "pages/search/index",
     "pages/carIndex/index",
     "pages/maphandle/index",
+    "pages/bleConnect/bleConnect",
+    "pages/sendCommand/sendCommand",
+    "pages/paySuccess/index",
+    "pages/UserPaymentPage/index",
     "pages/Testpage/HomePage/index",
     "pages/admin/telbook/index",
     "pages/telbook/business/business",
@@ -42,7 +43,7 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#FF5F0F",
-    "navigationBarTitleText": "乡宁城乡公交",
+    "navigationBarTitleText": "乡宁城乡",
     "navigationBarTextStyle": "white",
     "backgroundColor": "white"
   },
